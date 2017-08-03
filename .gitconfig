@@ -7,3 +7,5 @@
 	default = simple
 [diff]
 	tool = vimdiff
+[color]
+  diff = auto
