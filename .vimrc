@@ -17,12 +17,14 @@ Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'raimondi/delimitMate'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
 " Configuration for specific plugins
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
+let g:airline#extensions#whitespace#enabled = 0 
 let mapleader = ","
 let g:mapleader = ","
 map <leader>nn :NERDTreeToggle<cr>
