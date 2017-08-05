@@ -96,12 +96,6 @@ set noswapfile
 
 colorscheme solarized
 
-" Avoid garbled characters in Chinese language windows OS
-let $LANG='en' 
-set langmenu=en
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
-
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 
