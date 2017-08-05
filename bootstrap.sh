@@ -1,27 +1,29 @@
 #!/bin/bash
 
-dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-olddir=~/dotfiles_old
-files=".bashrc .gitconfig git-completion.bash .screenrc .vim_runtime .tmux.conf"
+olddir=$HOME/dotfiles_old
+files=".vimrc .bashrc .gitconfig git-completion.bash .screenrc .tmux.conf"
 
+echo "Fetching newest version of this repository..."
 git pull origin master
 
-read -p "Do you wish to install vim plugin YouCompleteMe? [y/n]" yn
-case $yn in
-  [Yy]* ) git submodule update --init --recursive
-          python $dir/.vim_runtime/my_plugins/YouCompleteMe/install.py ;;
-  [Nn]* ) git submodule update --init .vim_runtime ;;
-esac
-
-sh $dir/.vim_runtime/install_awesome_vimrc.sh
-
-printf "Creating backup directory..."
-mkdir -p $olddir
-printf "done\n"
+if [ ! -d $olddir ]; then
+	printf "Creating backup directory..."
+	mkdir $olddir
+	printf "ok\n"
+	for file in $files; do
+		if [ -f $HOME/$file ]; then
+			printf "Moving $HOME/$file to $olddir..."
+			mv $HOME/$file $olddir/
+			printf "ok\n"
+		fi
+	done
+fi
 
 for file in $files; do
-  echo "Moving $file from ~ to $olddir"
-  mv ~/$file $olddir/
-  echo "Symlinking $file"
-  ln -s $dir/$file ~/$file
+	if [ ! -h $HOME/$file ]; then
+		echo "Symlink $file to home directory..."
+		ln -s $PWD/$file $HOME/$file
+	fi
 done
+
+echo "Installation complete."
