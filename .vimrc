@@ -24,6 +24,9 @@ let g:airline_solarized_bg='dark'
 let mapleader = ","
 let g:mapleader = ","
 
+map <leader>nn :NERDTreeToggle<cr>
+let g:NERDTreeWinPos = "right"
+
 set shiftwidth=2
 set tabstop=2
 
