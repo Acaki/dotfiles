@@ -24,9 +24,16 @@ let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 let mapleader = ","
 let g:mapleader = ","
-
 map <leader>nn :NERDTreeToggle<cr>
 let g:NERDTreeWinPos = "right"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 set shiftwidth=2
 set tabstop=2
