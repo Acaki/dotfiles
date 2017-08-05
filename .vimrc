@@ -16,6 +16,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
+Plug 'raimondi/delimitMate'
 
 call plug#end()
 
@@ -29,12 +30,13 @@ let g:NERDTreeWinPos = "right"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let delimitMate_expand_cr = 1
 
+set autoread
 set shiftwidth=2
 set tabstop=2
 
@@ -92,6 +94,9 @@ let $LANG='en'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
