@@ -37,6 +37,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let delimitMate_expand_cr = 1
+" Python
+let g:syntastic_python_checkers=['pyflakes']
+
+" Javascript
+let g:syntastic_javascript_checkers = ['jshint']
 
 set autoread
 set shiftwidth=2
