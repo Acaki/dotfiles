@@ -17,7 +17,12 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
+set shiftwidth=2
+set tabstop=2
 set background=dark
+set clipboard=exclude:.*
+set splitright
+set splitbelow
 colorscheme solarized
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
