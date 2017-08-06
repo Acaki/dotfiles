@@ -21,17 +21,27 @@ Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
-" Configuration for specific plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Configuration for specific plugins 
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = ''
+let g:airline_section_error = ''
+let g:airline_section_warning = ''
+let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 let g:airline#extensions#whitespace#enabled = 0 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let mapleader = ","
-let g:mapleader = ","
+
 map <leader>nn :NERDTreeToggle<cr>
 let g:NERDTreeWinPos = "right"
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -39,14 +49,27 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let delimitMate_expand_cr = 1
-" Python
 let g:syntastic_python_checkers=['pyflakes']
-
-" Javascript
 let g:syntastic_javascript_checkers = ['jshint']
 
+let delimitMate_expand_cr = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" General configs
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""
+set background=dark
+colorscheme solarized
+let mapleader = ","
+let g:mapleader = ","
 set autoread
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Text edit related
+" 
+"""""""""""""""""""""""""""""""""""""""""""""""""
 set shiftwidth=2
 set tabstop=2
 
@@ -60,7 +83,6 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-set background=dark
 set clipboard=exclude:.*
 set splitright
 set splitbelow
@@ -97,11 +119,15 @@ set nobackup
 set nowb
 set noswapfile
 
-colorscheme solarized
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Key mappings
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
@@ -115,8 +141,6 @@ map <C-l> <C-W>l
 " Super useful when editing files in the same directory
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 
-" Return to last edit position when opening files (You want this!)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
@@ -124,10 +148,15 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Turn persistent undo on 
-"    means that you can undo even when you close a buffer/VIM
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Misc
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Return to last edit position when opening files (You want this!)
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Turn persistent undo on 
+" means that you can undo even when you close a buffer/VIM
 try
   set undodir=~/.vim_runtime/temp_dirs/undodir
   set undofile
