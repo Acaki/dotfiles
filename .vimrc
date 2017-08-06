@@ -25,6 +25,9 @@ call plug#end()
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 let g:airline#extensions#whitespace#enabled = 0 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 let mapleader = ","
 let g:mapleader = ","
 map <leader>nn :NERDTreeToggle<cr>
