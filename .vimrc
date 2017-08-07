@@ -21,6 +21,9 @@ Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
+let mapleader = ","
+let g:mapleader = ","
+
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration for specific plugins 
 "
@@ -61,8 +64,6 @@ let delimitMate_expand_cr = 1
 """""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark
 colorscheme solarized
-let mapleader = ","
-let g:mapleader = ","
 set autoread
 
 
