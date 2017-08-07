@@ -58,7 +58,6 @@ let delimitMate_expand_cr = 1
 
 map <leader>f :CtrlPMRU<cr>
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""
 " General configs
 "
@@ -132,8 +131,8 @@ set backspace=eol,start,indent
 """""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>w :w!<cr>
 " Mappings for switching buffers
-nnoremap <leader>l :bn<cr>
-nnoremap <leader>h :bp<cr>
+nnoremap ]b :bn<cr>
+nnoremap [b :bp<cr>
 nnoremap <leader>c :bp\|bd #<cr>
 
 " Disable highlight when <leader><cr> is pressed
