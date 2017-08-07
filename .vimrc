@@ -22,7 +22,6 @@ Plug 'tpope/vim-fugitive'
 call plug#end()
 
 let mapleader = ","
-let g:mapleader = ","
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration for specific plugins 
@@ -42,7 +41,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-map <leader>nn :NERDTreeToggle<cr>
+map <leader>n :NERDTreeToggle<cr>
 let g:NERDTreeWinPos = "right"
 
 set statusline+=%#warningmsg#
@@ -131,30 +130,32 @@ set backspace=eol,start,indent
 " Key mappings
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>w :w!<cr>
 " Mappings for switching buffers
 nnoremap <leader>b :bn<cr>
 nnoremap <leader>B :bp<cr>
 nnoremap <leader>c :bp\|bd #<cr>
 
 " Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
+nmap <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+nmap <C-j> <C-W>j
+nmap <C-k> <C-W>k
+nmap <C-h> <C-W>h
+nmap <C-l> <C-W>l
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
-
+nmap <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+nmap <leader>tc :tabclose<cr>
+nmap <leader>tm :tabmove
 
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
+nmap <leader>pp :setlocal paste!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
