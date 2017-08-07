@@ -129,6 +129,11 @@ set backspace=eol,start,indent
 " Key mappings
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
+" Mappings for switching buffers
+map <leader>b :bn<cr>
+map <leader>B :bp<cr>
+map <leader>c :bd<cr>
+
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
