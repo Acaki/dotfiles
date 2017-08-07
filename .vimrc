@@ -155,7 +155,7 @@ nmap <leader>tm :tabmove
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Toggle paste mode on and off
-nmap <leader>pp :setlocal paste!<cr>
+nmap <leader>p :setlocal paste!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
