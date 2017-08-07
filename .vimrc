@@ -1,10 +1,17 @@
-" Configuration for vim-plug"
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Auto installation of vim-plug
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""
 if empty(glob('~/.vim/autoload/plug.vim'))
 	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
 	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Load plugins
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -41,7 +48,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-map <leader>n :NERDTreeToggle<cr>
+nmap <leader>n :NERDTreeToggle<cr>
+" Open NERDTree panel on the right side
 let g:NERDTreeWinPos = "right"
 
 set statusline+=%#warningmsg#
@@ -56,7 +64,8 @@ let g:syntastic_javascript_checkers = ['jshint']
 
 let delimitMate_expand_cr = 1
 
-map <leader>f :CtrlPMRU<cr>
+nmap <leader>f :CtrlPMRU<cr>
+" Fix for slow exiting
 let g:ctrlp_clear_cache_on_exit = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,6 +75,8 @@ let g:ctrlp_clear_cache_on_exit = 0
 set background=dark
 colorscheme solarized
 set autoread
+" For gitgutter to update faster
+set updatetime=250
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -121,7 +132,6 @@ set nobackup
 set nowb
 set noswapfile
 
-
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 
@@ -137,7 +147,7 @@ nnoremap [b :bp<cr>
 nnoremap <leader>c :bp\|bd #<cr>
 
 " Disable highlight when <leader><cr> is pressed
-nmap <silent> <leader><cr> :noh<cr>
+nmap <leader><cr> :noh<cr>
 
 " Smart way to move between windows
 nmap <C-j> <C-W>j
