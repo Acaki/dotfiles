@@ -57,6 +57,8 @@ let g:syntastic_javascript_checkers = ['jshint']
 
 let delimitMate_expand_cr = 1
 
+map <leader>f :CtrlPMRU<cr>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " General configs
