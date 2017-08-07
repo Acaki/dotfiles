@@ -57,6 +57,7 @@ let g:syntastic_javascript_checkers = ['jshint']
 let delimitMate_expand_cr = 1
 
 map <leader>f :CtrlPMRU<cr>
+let g:ctrlp_clear_cache_on_exit = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " General configs
