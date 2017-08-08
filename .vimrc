@@ -77,6 +77,7 @@ colorscheme solarized
 set autoread
 " For gitgutter to update faster
 set updatetime=250
+set hidden
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
