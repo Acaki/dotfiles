@@ -1,5 +1,5 @@
  defutf8 on
- encoding UTF-8
+ encoding big5 utf8 
  vbell off
 
  bindkey "^[`" select 0
