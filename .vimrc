@@ -38,8 +38,6 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.linenr = ''
-let g:airline_section_error = ''
-let g:airline_section_warning = ''
 let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
@@ -52,14 +50,8 @@ nmap <leader>n :NERDTreeToggle<cr>
 " Open NERDTree panel on the right side
 let g:NERDTreeWinPos = "right"
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_javascript_checkers = ['jshint']
 
 let delimitMate_expand_cr = 1
