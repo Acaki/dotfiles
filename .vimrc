@@ -57,7 +57,7 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_skip_empty_sections = 1
+let g:airline_right_alt_sep = ''
 
 nmap <leader>n :NERDTreeToggle<cr>
 " Open NERDTree panel on the right side
