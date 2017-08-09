@@ -12,7 +12,7 @@ endif
 " Load plugins
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'altercation/vim-colors-solarized'
