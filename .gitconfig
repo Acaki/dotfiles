@@ -3,6 +3,8 @@
 	email = axsz4298@gmail.com
 [core]
 	editor = vim
+	autocrlf = input
+  whitespace = cr-at-eol
 [push]
 	default = simple
 [diff]
