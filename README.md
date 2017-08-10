@@ -1,7 +1,10 @@
 # Installation
 Run the following commands in order:  
-Note: You need to install powerline fonts [here](https://github.com/powerline/fonts) (I use Inconsolata-dz) for vim-airline to display correctly.
 
     git clone https://github.com/Acaki/dotfiles.git
     cd dotfiles
-    sh bootstrap.sh
+    sh install_all.sh
+    or
+    sh install_vimrc_only.sh
+    
+Your existing dotfiles will be moved to dotfiles_old directory if you choose to install all, and your existing .vimrc file will be renamed to .vimrc.old if you choose to install vimrc only.
