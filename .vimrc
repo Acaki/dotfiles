@@ -88,6 +88,7 @@ set updatetime=250
 set laststatus=2
 set noshowmode
 set hidden
+set wildmenu
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
