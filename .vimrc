@@ -112,6 +112,9 @@ set autoread
 " For gitgutter to update faster
 set updatetime=250
 set laststatus=2
+set lazyredraw
+" Prevent status bar not showing initially
+autocmd VimEnter * redrawstatus!
 set noshowmode
 set hidden
 set wildmenu
