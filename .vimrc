@@ -75,6 +75,7 @@ let delimitMate_expand_cr = 1
 nmap <leader>f :CtrlPMRU<cr>
 " Fix for slow exiting
 let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " General configs
