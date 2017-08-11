@@ -53,13 +53,13 @@ let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \             [ 'fugitive', 'filename', 'modified' ] ],
       \   'right': [ [ 'syntastic', 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \              [ 'filetype' ] ]
       \ },
       \ 'component': {
-      \   'lineinfo': ' %3l:%-2v',
+      \   'lineinfo': '%3l:%-2v',
       \ },
       \ 'component_expand': {
       \   'syntastic': 'SyntasticStatuslineFlag',
@@ -73,10 +73,17 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
+function! LightlineFugitive()
+  if exists('*fugitive#head')
+    let branch = fugitive#head()
+    return branch !=# '' ? ''.branch : ''
+  endif
+  return ''
+endfunction
 let g:syntastic_mode_map = { 'mode': 'passive' }
 augroup AutoSyntastic
   autocmd!
-  autocmd BufWritePost * call s:syntastic()
+  autocmd BufWritePost *.c,*.cpp,*.php,*.js call s:syntastic()
 augroup END
 function! s:syntastic()
   SyntasticCheck
@@ -103,6 +110,9 @@ set laststatus=2
 set noshowmode
 set hidden
 set wildmenu
+if !has('gui_running')
+  set t_Co=256
+endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
