@@ -29,9 +29,9 @@ call plug#begin()
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-surround'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPMRU']}
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'raimondi/delimitMate'
@@ -80,7 +80,8 @@ endfunction
 
 let delimitMate_expand_cr = 1
 
-nmap <leader>f :CtrlPMRU<cr>
+nmap <leader>f :CtrlP<cr>
+nmap <leader>j :CtrlPMRU<cr>
 " Fix for slow exiting
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
