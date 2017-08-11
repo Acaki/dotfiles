@@ -57,7 +57,7 @@ let g:lightline = {
       \             [ 'filename' ] ],
       \   'right': [ [ 'syntastic', 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \              [ 'filetype' ] ]
       \ },
       \ 'component': {
       \   'lineinfo': '%3l:%-2v',
