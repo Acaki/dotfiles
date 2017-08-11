@@ -58,6 +58,9 @@ let g:lightline = {
       \              [ 'percent' ],
       \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
+      \ 'component': {
+      \   'lineinfo': ' %3l:%-2v',
+      \ },
       \ 'component_expand': {
       \   'syntastic': 'SyntasticStatuslineFlag',
       \ },
@@ -65,8 +68,10 @@ let g:lightline = {
       \   'syntastic': 'error',
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
-      \ }
+      \   'fugitive': 'LightlineFugitive'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 let g:syntastic_mode_map = { 'mode': 'passive' }
 augroup AutoSyntastic
