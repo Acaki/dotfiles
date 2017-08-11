@@ -69,15 +69,11 @@ let g:lightline = {
       \   'syntastic': 'error',
       \ },
       \ 'component_function': {
-      \   'fugitive': 'LightlineFugitive',
-      \   'filename': 'LightlineFilename'
+      \   'fugitive': 'LightlineFugitive'
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
-function! LightlineFilename()
-  return expand('%')
-endfunction
 function! LightlineFugitive()
   if exists('*fugitive#head')
     let branch = fugitive#head()
@@ -113,8 +109,6 @@ set autoread
 set updatetime=250
 set laststatus=2
 set lazyredraw
-" Prevent status bar not showing initially
-autocmd VimEnter * redrawstatus!
 set noshowmode
 set hidden
 set wildmenu
