@@ -53,10 +53,11 @@ let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename', 'modified' ] ],
+      \             [ 'fugitive', 'modified' ],
+      \             [ 'filename' ] ],
       \   'right': [ [ 'syntastic', 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'filetype' ] ]
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component': {
       \   'lineinfo': '%3l:%-2v',
@@ -68,11 +69,15 @@ let g:lightline = {
       \   'syntastic': 'error',
       \ },
       \ 'component_function': {
-      \   'fugitive': 'LightlineFugitive'
+      \   'fugitive': 'LightlineFugitive',
+      \   'filename': 'LightlineFilename'
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
+function! LightlineFilename()
+  return expand('%')
+endfunction
 function! LightlineFugitive()
   if exists('*fugitive#head')
     let branch = fugitive#head()
@@ -210,7 +215,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Turn persistent undo on 
 " means that you can undo even when you close a buffer/VIM
 try
-  set undodir=~/.vim_runtime/temp_dirs/undodir
+  set undodir=~/.vim/temp_dirs/undodir
   set undofile
 catch
 endtry
