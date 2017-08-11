@@ -30,7 +30,8 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'itchyny/lightline.vim'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
@@ -45,20 +46,22 @@ let mapleader = ","
 " Configuration for specific plugins 
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr = ''
+let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+let g:airline#extensions#whitespace#enabled = 0 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_right_alt_sep = ''
+
 nmap <leader>n :NERDTreeToggle<cr>
 " Open NERDTree panel on the right side
 let g:NERDTreeWinPos = "right"
-
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
@@ -69,7 +72,6 @@ nmap <leader>f :CtrlPMRU<cr>
 " Fix for slow exiting
 let g:ctrlp_clear_cache_on_exit = 0
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""
 " General configs
 "
@@ -79,8 +81,6 @@ colorscheme solarized
 set autoread
 " For gitgutter to update faster
 set updatetime=250
-set laststatus=2
-set noshowmode
 set hidden
 
 
