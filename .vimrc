@@ -34,8 +34,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
-Plug 'raimondi/delimitMate'
 Plug 'tpope/vim-fugitive'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -82,8 +82,6 @@ function! s:syntastic()
   SyntasticCheck
   call lightline#update()
 endfunction
-
-let delimitMate_expand_cr = 1
 
 nmap <leader>f :CtrlP<cr>
 nmap <leader>j :CtrlPMRU<cr>
