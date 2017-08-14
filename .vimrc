@@ -60,13 +60,13 @@ let g:lightline = {
       \              [ 'filetype' ] ]
       \ },
       \ 'component': {
-      \   'lineinfo': '%3l:%-2v',
+      \   'lineinfo': '%3l:%-2v'
       \ },
       \ 'component_expand': {
-      \   'syntastic': 'SyntasticStatuslineFlag',
+      \   'syntastic': 'SyntasticStatuslineFlag'
       \ },
       \ 'component_type': {
-      \   'syntastic': 'error',
+      \   'syntastic': 'error'
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightlineFugitive'
