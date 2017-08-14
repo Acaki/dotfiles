@@ -71,8 +71,8 @@ let g:lightline = {
       \ 'component_function': {
       \   'fugitive': 'LightlineFugitive'
       \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
+      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
       \ }
 function! LightlineFugitive()
   if exists('*fugitive#head')
