@@ -20,8 +20,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPMRU']}
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
@@ -70,15 +68,6 @@ function! LightlineFugitive()
   endif
   return ''
 endfunction
-let g:syntastic_mode_map = { 'mode': 'passive' }
-augroup AutoSyntastic
-  autocmd!
-  autocmd BufWritePost * call s:syntastic()
-augroup END
-function! s:syntastic()
-  SyntasticCheck
-  call lightline#update()
-endfunction
 
 nmap <leader>f :CtrlP<cr>
 nmap <leader>j :CtrlPMRU<cr>
@@ -91,19 +80,17 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 " General configs
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
+if !has('gui_running')
+  set t_Co=256
+endif
 set background=dark
 colorscheme solarized
 set autoread
-" For gitgutter to update faster
-set updatetime=250
 set laststatus=2
 set lazyredraw
 set noshowmode
 set hidden
 set wildmenu
-if !has('gui_running')
-  set t_Co=256
-endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
