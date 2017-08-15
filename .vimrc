@@ -36,7 +36,7 @@ let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'modified' ],
+      \             [ 'fugitive', 'modified', 'readonly'],
       \             [ 'filename' ] ],
       \   'right': [ [ 'syntastic', 'lineinfo' ],
       \              [ 'percent' ],
@@ -52,11 +52,15 @@ let g:lightline = {
       \   'syntastic': 'error'
       \ },
       \ 'component_function': {
+      \   'readonly': 'LightlineReadonly',
       \   'fugitive': 'LightlineFugitive'
       \ },
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
+function! LightlineReadonly()
+  return &readonly ? '' : ''
+endfunction
 function! LightlineFugitive()
   if exists('*fugitive#head')
     let branch = fugitive#head()
