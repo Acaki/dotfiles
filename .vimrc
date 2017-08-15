@@ -15,11 +15,11 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
 
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'altercation/vim-colors-solarized'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': ['CtrlP', 'CtrlPMRU']}
-Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
@@ -32,10 +32,6 @@ let mapleader = ","
 " Configuration for specific plugins 
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
-nmap <leader>n :NERDTreeToggle<cr>
-" Open NERDTree panel on the right side
-let g:NERDTreeWinPos = "right"
-
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'active': {
@@ -68,6 +64,10 @@ function! LightlineFugitive()
   endif
   return ''
 endfunction
+
+nmap <leader>n :NERDTreeToggle<cr>
+" Open NERDTree panel on the right side
+let g:NERDTreeWinPos = "right"
 
 nmap <leader>f :CtrlP<cr>
 nmap <leader>j :CtrlPMRU<cr>
