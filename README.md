@@ -2,15 +2,21 @@
 Run the following commands in order:  
 
     git clone https://github.com/Acaki/dotfiles.git
-    cd dotfiles
-    sh install_all.sh
-    or
-    sh install_vimrc_only.sh
+    sh dotfiles/bootstrap.sh
+    # You can choose to install/not install individual files when prompted
     
-Your existing dotfiles will be moved to dotfiles_old directory if you choose to install all, and your existing .vimrc file will be renamed to .vimrc.old if you choose to install vimrc only.
+If any files you choose to install has already exists in your home directory, it will be moved to `~/dotfiles_old` which enables you to restore your original files after installation.
+
+# How to update to latest version
+You can do one of the follows to get newest changes
+* Simply run `bootstrap.sh` again
+* Run `git pull` in dotfiles folader
+
+For plugin updates, please open vim and run `:PlugClean` followed by `:PlugUpdate`
 
 # Included plugins
-* [Solarized](https://github.com/altercation/vim-colors-solarized)
+* [vim-plug](https://github.com/junegunn/vim-plug) for plugin managements, it will be automatically installed when you launch vim for the first time after installing vimrc in this repository.
+* [solarized](https://github.com/altercation/vim-colors-solarized) (default colorscheme)
 * [lightline](https://github.com/itchyny/lightline.vim)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [surround](https://github.com/tpope/vim-surround)
@@ -20,8 +26,9 @@ Your existing dotfiles will be moved to dotfiles_old directory if you choose to 
 * [auto-pairs](https://github.com/jiangmiao/auto-pairs)
 
 # Key mappings
-Leader key is mapped to ','
 
+    let mapleader = ","
+    
     nmap <leader>n :NERDTreeToggle<cr>
     nmap <leader>f :CtrlP<cr>
     nmap <leader>j :CtrlPMRU<cr>
@@ -57,5 +64,9 @@ Leader key is mapped to ','
 More settings please refer to comments in .vimrc file
 
 # How to include your own config
-Create a file named my_configs.vim in the same directory of this repository (~/dotfiles/my_configs.vim if you clone at home directory)  
-Then simply edit the file to add configs your like.
+Create a file named `my_configs.vim` in the same directory of this repository (e.g. `~/dotfiles/my_configs.vim` if you clone at home directory), then simply edit the file to add vim configs as you like.  
+  
+For example, if you want to change the colorscheme to default one, add the following lines in `my_configs.vim`:  
+
+    colorscheme default "Use default vim theme
+    let g:lightline['colorscheme'] = 'default' "Use default lightline theme
