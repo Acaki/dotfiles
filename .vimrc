@@ -194,3 +194,8 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 silent !mkdir -p ~/.vim/undodir
 set undodir=~/.vim/undodir
 set undofile
+
+try
+  source ~/dotfiles/my_configs.vim
+catch
+endtry
