@@ -61,7 +61,7 @@ For plugin updates, please open vim and run `:PlugClean` followed by `:PlugUpdat
     " Toggle paste mode on and off
     nmap <leader>p :setlocal paste!<cr>
 
-For more detiled settings please refer to comments in .vimrc file
+For more detailed settings please refer to comments in .vimrc file
 
 # How to include your own config
 Create a file named `my_configs.vim` in the same directory of this repository (e.g. `~/dotfiles/my_configs.vim` if you clone at home directory), then simply edit the file to add vim configs as you like.  
