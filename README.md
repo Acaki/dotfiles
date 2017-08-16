@@ -12,9 +12,9 @@ You can do one of the follows to get newest changes:
 * Simply run `bootstrap.sh` again
 * Run `git pull` in `dotfiles` folder
 
-For plugin updates, please open vim and run `:PlugClean` followed by `:PlugUpdate`.
+For vim plugin updates, please open vim and run `:PlugClean` followed by `:PlugUpdate`.
 
-# Included plugins
+# Included vim plugins
 * [vim-plug](https://github.com/junegunn/vim-plug) for plugin managements, it will be automatically installed when you launch vim for the first time after installing vimrc in this repository.
 * [solarized](https://github.com/altercation/vim-colors-solarized) (default colorscheme)  
 **Note: You need to set up your terminal properly for solarized to display correct colors, please refer to their repository for details.**
@@ -27,6 +27,7 @@ For plugin updates, please open vim and run `:PlugClean` followed by `:PlugUpdat
 * [auto-pairs](https://github.com/jiangmiao/auto-pairs)
 
 # Key mappings
+## vim
 
     let mapleader = ","
     
@@ -62,9 +63,12 @@ For plugin updates, please open vim and run `:PlugClean` followed by `:PlugUpdat
     " Toggle paste mode on and off
     nmap <leader>p :setlocal paste!<cr>
 
-For more detailed settings please refer to comments in .vimrc file.
+For more detailed settings please refer to comments in .vimrc file.  
+## tmux
+Prefix key is changed to `Ctrl + A`
 
-# How to include your own config
+
+# How to include your own vim config
 Create a file named `my_configs.vim` in the same directory of this repository (e.g. `~/dotfiles/my_configs.vim` if you clone at home directory), then simply edit the file to add vim configs as you like.  
   
 For example, if you want to change the colorscheme to default one, add the following lines in `my_configs.vim`:  
