@@ -24,6 +24,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 
+try
+  source ~/dotfiles/my_plugins.vim
+catch
+endtry
+
 call plug#end()
 
 let mapleader = ","
