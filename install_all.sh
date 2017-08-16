@@ -26,4 +26,9 @@ for file in $files; do
 	fi
 done
 
+read -p "Enter your name to be used in git: " name
+git config --global user.name "$name"
+read -p "Enter your email to be used in git: " email
+git config --global user.email "$email"
+
 echo "Installation complete."
