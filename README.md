@@ -70,8 +70,14 @@ Prefix key is changed to `Ctrl + A`
 
 # How to include your own vim config
 Create a file named `my_configs.vim` in the same directory of this repository (e.g. `~/dotfiles/my_configs.vim` if you clone at home directory), then simply edit the file to add vim configs as you like.  
-  
-For example, if you want to change the colorscheme to default one, add the following lines in `my_configs.vim`:  
 
+    " Example for using default vim theme
     colorscheme default "Use default vim theme
     let g:lightline['colorscheme'] = 'default' "Use default lightline theme
+    
+If you want to install additional vim plugins, create a file named `my_plugins.vim` in the same folder and use `Plug` commands to add plugins.  
+
+    " Example for installing vim-syntastic plugin
+    Plug 'vim-syntastic/syntastic'
+
+For more supported plugin path syntax please refer to [vim-plug](https://github.com/junegunn/vim-plug).
