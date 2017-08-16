@@ -9,5 +9,10 @@
 	default = simple
 [diff]
 	tool = vimdiff
+[difftool]
+  prompt = false
 [color]
   diff = auto
+  status = auto
+  branch = auto
+  ui = true
