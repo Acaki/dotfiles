@@ -10,7 +10,7 @@ If any files you choose to install has already exists in your home directory, it
 # How to update to latest version
 You can do one of the follows to get newest changes
 * Simply run `bootstrap.sh` again
-* Run `git pull` in dotfiles folader
+* Run `git pull` in `dotfiles` folder
 
 For plugin updates, please open vim and run `:PlugClean` followed by `:PlugUpdate`
 
@@ -61,7 +61,7 @@ For plugin updates, please open vim and run `:PlugClean` followed by `:PlugUpdat
     " Toggle paste mode on and off
     nmap <leader>p :setlocal paste!<cr>
 
-More settings please refer to comments in .vimrc file
+For more detiled settings please refer to comments in .vimrc file
 
 # How to include your own config
 Create a file named `my_configs.vim` in the same directory of this repository (e.g. `~/dotfiles/my_configs.vim` if you clone at home directory), then simply edit the file to add vim configs as you like.  
