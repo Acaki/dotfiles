@@ -8,15 +8,16 @@ Run the following commands in order:
 If any files you choose to install has already exists in your home directory, it will be moved to `~/dotfiles_old` which enables you to restore your original files after installation.
 
 # How to update to latest version
-You can do one of the follows to get newest changes
+You can do one of the follows to get newest changes:
 * Simply run `bootstrap.sh` again
 * Run `git pull` in `dotfiles` folder
 
-For plugin updates, please open vim and run `:PlugClean` followed by `:PlugUpdate`
+For plugin updates, please open vim and run `:PlugClean` followed by `:PlugUpdate`.
 
 # Included plugins
 * [vim-plug](https://github.com/junegunn/vim-plug) for plugin managements, it will be automatically installed when you launch vim for the first time after installing vimrc in this repository.
-* [solarized](https://github.com/altercation/vim-colors-solarized) (default colorscheme)
+* [solarized](https://github.com/altercation/vim-colors-solarized) (default colorscheme)  
+**Note: You need to set up your terminal properly for solarized to display correct colors, please refer to their repository for details.**
 * [lightline](https://github.com/itchyny/lightline.vim)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [surround](https://github.com/tpope/vim-surround)
@@ -61,7 +62,7 @@ For plugin updates, please open vim and run `:PlugClean` followed by `:PlugUpdat
     " Toggle paste mode on and off
     nmap <leader>p :setlocal paste!<cr>
 
-For more detailed settings please refer to comments in .vimrc file
+For more detailed settings please refer to comments in .vimrc file.
 
 # How to include your own config
 Create a file named `my_configs.vim` in the same directory of this repository (e.g. `~/dotfiles/my_configs.vim` if you clone at home directory), then simply edit the file to add vim configs as you like.  
