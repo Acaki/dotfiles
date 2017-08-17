@@ -40,9 +40,13 @@ let mapleader = ","
 """""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme = 'base16'
 let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.maxlinenr = ''
 let g:airline_extensions = ['quickfix', 'branch', 'ctrlp', 'tabline']
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
-let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 0
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
@@ -55,13 +59,13 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_close_button = 0
 
-
 nmap <leader>n :NERDTreeToggle<cr>
 " Open NERDTree panel on the right side
 let g:NERDTreeWinPos = "right"
 
 nmap <leader>f :CtrlP<cr>
 nmap <leader>j :CtrlPMRU<cr>
+nmap <leader>b :CtrlPBuffer<cr>
 " Fix for slow exiting
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
@@ -74,10 +78,15 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 if !has('gui_running')
   set t_Co=256
 endif
+set encoding=utf8
 set background=dark
 colorscheme solarized
 set autoread
+" Always show status bar
 set laststatus=2
+" Reduce delay when exiting insert mode
+set ttimeoutlen=50
+" Improve macro performance
 set lazyredraw
 set noshowmode
 set hidden
@@ -90,10 +99,8 @@ set wildmenu
 """""""""""""""""""""""""""""""""""""""""""""""""
 set shiftwidth=2
 set tabstop=2
-
 " Use spaces instead of tabs
 set expandtab
-
 " Be smart when using tabs ;)
 set smarttab
 
@@ -102,17 +109,16 @@ set si "Smart indent
 set wrap "Wrap lines
 
 set clipboard=exclude:.*
+
 set splitright
 set splitbelow
+
 " Ignore case when searching
 set ignorecase
-
 " When searching try to be smart about cases 
 set smartcase
-
 " Highlight search results
 set hlsearch
-
 " Makes search act like search in modern browsers
 set incsearch 
 
@@ -120,14 +126,6 @@ set incsearch
 set showmatch 
 " How many tenths of a second to blink when matching brackets
 set mat=2
-
-" No annoying sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
-
-set encoding=utf8
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
@@ -142,7 +140,9 @@ set backspace=eol,start,indent
 " Key mappings
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
+" For fast saving, no more :W bullshit
 nmap <leader>w :w!<cr>
+
 " Mappings for switching buffers
 nnoremap ]b :bn<cr>
 nnoremap [b :bp<cr>
