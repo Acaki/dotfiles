@@ -86,8 +86,8 @@ Prefix key is changed to `Ctrl + A`
 Create a file named `my_configs.vim` in `~/dotfiles/my_configs.vim`, then simply edit the file to add vim configs as you like.  
 
     " Example for using default vim theme
-    colorscheme default "Use default vim theme
-    let g:lightline['colorscheme'] = 'default' "Use default lightline theme
+    colorscheme default " Use default vim theme
+    let g:airline_theme = 'dark' " Use default theme for airline
     
 If you want to install additional vim plugins, create a file named `my_plugins.vim` in the same folder and use `Plug` commands to add plugins.  
 
