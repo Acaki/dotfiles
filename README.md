@@ -3,17 +3,18 @@ Run the following commands in order:
 
     cd ~
     git clone https://github.com/Acaki/dotfiles.git
-    sh dotfiles/bootstrap.sh
+    cd dotfiles
+    chmod +x bootstrap.sh
+    ./bootstrap.sh
     # You can choose to install/not install individual files when prompted
     
 If any files you choose to install has already exists in your home directory, it will be moved to `~/dotfiles_old` which enables you to restore your original files after installation.
 
 # How to update to latest version
-You can do one of the follows to get newest changes:
-* Simply run `bootstrap.sh` again
-* Run `git pull` in `dotfiles` folder
 
-For vim plugin updates, please open vim and run `:PlugClean` followed by `:PlugUpdate`.
+1. `cd` to dotfiles folder
+2. Run `git pull --rebase` (or run `bootstrap.sh` if you want to choose different files to install)
+3. Open vim, and run `:PlugClean` followed by `:PlugUpdate` (If there are changes to plugins)  
 
 # Included vim plugins
 * [vim-plug](https://github.com/junegunn/vim-plug) for plugin managements, it will be automatically installed when you launch vim for the first time after installing vimrc in this repository.
@@ -26,7 +27,6 @@ For vim plugin updates, please open vim and run `:PlugClean` followed by `:PlugU
 * [ctrlp](https://github.com/kien/ctrlp.vim)
 * [commentary](https://github.com/tpope/vim-commentary)
 * [fugitive](https://github.com/tpope/vim-fugitive)
-* [auto-pairs](https://github.com/jiangmiao/auto-pairs)
 
 # Key mappings
 ## vim
@@ -44,6 +44,7 @@ For vim plugin updates, please open vim and run `:PlugClean` followed by `:PlugU
     nmap <leader>9 <Plug>AirlineSelectTab9
     
     nmap <leader>n :NERDTreeToggle<cr>
+    
     nmap <leader>f :CtrlP<cr>
     nmap <leader>j :CtrlPMRU<cr>
     nmap <leader>b :CtrlPBuffer<cr>
@@ -86,7 +87,7 @@ Prefix key is changed to `Ctrl + A`
 Create a file named `my_configs.vim` in `~/dotfiles/my_configs.vim`, then simply edit the file to add vim configs as you like.  
 
     " Example for using default vim theme
-    colorscheme default " Use default vim theme
+    color default " Use default vim theme
     let g:airline_theme = 'dark' " Use default theme for airline
     
 If you want to install additional vim plugins, create a file named `my_plugins.vim` in the same folder and use `Plug` commands to add plugins.  
