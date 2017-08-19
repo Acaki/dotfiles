@@ -105,9 +105,7 @@ set autoread
 " Always show status bar
 set laststatus=2
 " Reduce delay when exiting insert mode
-set ttimeoutlen=50
-" Improve macro performance
-set lazyredraw
+set ttimeoutlen=10
 set noshowmode
 set hidden
 set wildmenu
