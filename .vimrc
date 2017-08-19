@@ -98,7 +98,7 @@ else
 endif
 
 set background=dark
-colorscheme solarized
+color solarized
 
 set autoread
 " Always show status bar
@@ -121,7 +121,8 @@ set expandtab
 " Be smart when using tabs ;)
 set smarttab
 
-set scrolloff=5
+set scrolloff=3
+set mouse=a
 
 set ai "Auto indent
 set si "Smart indent
@@ -129,6 +130,7 @@ set wrap "Wrap lines
 
 set clipboard=exclude:.*
 
+" Adjust appear location of splits
 set splitright
 set splitbelow
 
