@@ -34,7 +34,6 @@ Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'jiangmiao/auto-pairs'
 
 try
   source ~/dotfiles/my_plugins.vim
