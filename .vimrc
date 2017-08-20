@@ -122,7 +122,6 @@ set expandtab
 set smarttab
 
 set scrolloff=3
-set mouse=a
 
 set ai "Auto indent
 set si "Smart indent
@@ -158,6 +157,7 @@ set backspace=eol,start,indent
 """""""""""""""""""""""""""""""""""""""""""""""""
 " jk to escape
 imap jk <esc>
+
 " For fast saving, no more :W bullshit
 nmap <leader>w :w!<cr>
 
