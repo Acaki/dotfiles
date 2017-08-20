@@ -156,6 +156,8 @@ set backspace=eol,start,indent
 " Key mappings
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
+" jk to escape
+imap jk <esc>
 " For fast saving, no more :W bullshit
 nmap <leader>w :w!<cr>
 
