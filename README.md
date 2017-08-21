@@ -20,8 +20,7 @@ If any files you choose to install has already exists in your home directory, it
 * [vim-plug](https://github.com/junegunn/vim-plug) for plugin managements, it will be automatically installed when you launch vim for the first time after installing vimrc in this repository.
 * [solarized](https://github.com/altercation/vim-colors-solarized) (default colorscheme)  
 **Note: You need to set up your terminal properly for solarized to display correct colors, please refer to their repository for details.**
-* [airline](https://github.com/vim-airline/vim-airline) (default using `base16` colorscheme)  
-**Note: You need to use patched font in your terminal to display some special characters, which can be found [here](https://github.com/powerline/fonts).**
+* [lightline](https://github.com/itchyny/lightline.vim)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [surround](https://github.com/tpope/vim-surround)
 * [ctrlp](https://github.com/kien/ctrlp.vim)
@@ -105,7 +104,7 @@ Create a file named `my_configs.vim` in `~/dotfiles/my_configs.vim`, then simply
 
     " Example for using default vim theme
     color default " Use default vim theme
-    let g:airline_theme = 'dark' " Use default theme for airline
+    let g:lightline['colorscheme'] = 'default' "Use default lightline theme
     
 If you want to install additional vim plugins, create a file named `my_plugins.vim` in the same folder and use `Plug` commands to add plugins.  
 
