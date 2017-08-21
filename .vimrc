@@ -67,20 +67,9 @@ let g:lightline = {
       \   'syntastic': 'error'
       \ },
       \ 'component_function': {
-      \   'readonly': 'LightlineReadonly',
-      \   'fugitive': 'LightlineFugitive'
+      \   'fugitive': 'fugitive#head'
       \ }
       \ }
-function! LightlineReadonly()
-  return &readonly ? '' : ''
-endfunction
-function! LightlineFugitive()
-  if exists('*fugitive#head')
-    let branch = fugitive#head()
-    return branch !=# '' ? ' '.branch : ''
-  endif
-  return ''
-endfunction
 
 nmap <leader>n :NERDTreeToggle<cr>
 " Open NERDTree panel on the right side
