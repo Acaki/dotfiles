@@ -48,9 +48,6 @@ If any files you choose to install has already exists in your home directory, it
     nmap <leader>j :CtrlPMRU<cr>
     nmap <leader>b :CtrlPBuffer<cr>
 
-    " jk to escape
-    imap jk <esc>
-    
     " For fast saving, no more :W bullshit
     nmap <leader>w :w!<cr>
     
