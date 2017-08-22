@@ -194,6 +194,11 @@ set smarttab
 
 set scrolloff=3
 
+" Show matching brackets when text indicator is over them
+set showmatch
+" How many tenths of a second to blink when matching brackets
+set mat=1
+
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
