@@ -172,6 +172,8 @@ color solarized
 set autoread
 " Always show status bar
 set laststatus=2
+" Always show tab bar
+set showtabline=2
 " Reduce delay when exiting insert mode
 set ttimeoutlen=10
 set noshowmode
