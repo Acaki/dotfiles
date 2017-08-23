@@ -175,6 +175,7 @@ set laststatus=2
 " Always show tab bar
 set showtabline=2
 " Reduce delay when exiting insert mode
+set ttyfast
 set ttimeoutlen=10
 set noshowmode
 set hidden
