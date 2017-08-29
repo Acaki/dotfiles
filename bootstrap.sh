@@ -3,7 +3,7 @@
 cd "$(dirname "${BASH_SOURCE}")";
 
 olddir=$HOME/dotfiles_old
-files=".vimrc .bashrc .gitconfig git-completion.bash .screenrc .tmux.conf"
+files=".vimrc .gitconfig .screenrc .tmux.conf"
 
 echo "Fetching newest version of this repository..."
 git pull origin master
