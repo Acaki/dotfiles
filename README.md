@@ -71,9 +71,8 @@ For more detailed settings please refer to comments in .vimrc file.
 ## tmux
 Prefix key is changed to `Ctrl + A`
 
-Press Alt + `, 1, 2, ..., 9 to switch windows
+Press Alt + 1, 2, ..., 9 to switch windows
 
-    bind-key -n M-` select-window -t 0
     bind-key -n M-1 select-window -t 1
     bind-key -n M-2 select-window -t 2
     bind-key -n M-3 select-window -t 3
