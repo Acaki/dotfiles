@@ -7,29 +7,36 @@ Run the following commands in order:
     chmod +x bootstrap.sh
     ./bootstrap.sh
     # You can choose to install/not install individual files when prompted
+    # Please note that if you choose to install .gitconfig the script will ask you for entering name and email that will be used in git.
     
 If any files you choose to install has already exists in your home directory, it will be moved to `~/dotfiles_old` which enables you to restore your original files after installation.
 
 # How to update to latest version
+Run the following commands in order:  
 
-1. `cd` to dotfiles folder
-2. Run `git pull --rebase` (or run `bootstrap.sh` if you want to choose different files to install)
-3. Open vim, and run `:PlugClean` followed by `:PlugUpdate` (If there are changes to plugins)  
+    cd ~/dotfiles
+    chmod +x update.sh
+    ./update.sh
 
 # Included vim plugins
 * [vim-plug](https://github.com/junegunn/vim-plug) for plugin managements, it will be automatically installed when you launch vim for the first time after installing vimrc in this repository.
 * [solarized](https://github.com/altercation/vim-colors-solarized) (default colorscheme)  
-**Note: You need to set up your terminal properly for solarized to display correct colors, please refer to their repository for details.**
+**Note: You need to set up your terminal application properly for solarized theme to display accurate colors, please refer to their repository for details.**
 * [lightline](https://github.com/itchyny/lightline.vim)
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [surround](https://github.com/tpope/vim-surround)
-* [ctrlp](https://github.com/kien/ctrlp.vim)
+* [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
 * [commentary](https://github.com/tpope/vim-commentary)
 * [fugitive](https://github.com/tpope/vim-fugitive)
 
-# Key mappings
-## vim
+# Screenshots
+![Screenshot 1](http://i.imgur.com/S1G3hiX.png)
+![Screenshot 2](http://i.imgur.com/cjCCupg.png)
 
+# Key mappings
+## Vim
+
+    " <leader> is mapped to ","
     let mapleader = ","
     
     nmap <leader>n :NERDTreeToggle<cr>
@@ -68,7 +75,8 @@ If any files you choose to install has already exists in your home directory, it
     nmap <leader>p :setlocal paste!<cr>
 
 For more detailed settings please refer to comments in .vimrc file.  
-## tmux
+  
+## Tmux
 Prefix key is changed to `Ctrl + A`
 
 Press Alt + 1, 2, ..., 9 to switch windows
@@ -82,15 +90,29 @@ Press Alt + 1, 2, ..., 9 to switch windows
     bind-key -n M-7 select-window -t 7
     bind-key -n M-8 select-window -t 8
     bind-key -n M-9 select-window -t 9
+    
+**Note: start index of window has been changed to 1 instead of 0.**
+## Screen
+Press Alt + 1, 2, ..., 9 to switch screens
 
+    bindkey "^[1" select 1
+    bindkey "^[2" select 2
+    bindkey "^[3" select 3
+    bindkey "^[4" select 4
+    bindkey "^[5" select 5
+    bindkey "^[6" select 6
+    bindkey "^[7" select 7
+    bindkey "^[8" select 8
+    bindkey "^[9" select 9
+    bindkey "^[0" select 10
 
-
+**Note: start index of screen has been changed to 1 instead of 0.**
 # How to include your own vim config
 Create a file named `my_configs.vim` in `~/dotfiles/my_configs.vim`, then simply edit the file to add vim configs as you like.  
 
     " Example for using default vim theme
     color default " Use default vim theme
-    let g:lightline['colorscheme'] = 'default' "Use default lightline theme
+    let g:lightline['colorscheme'] = 'default' " Use default lightline theme
     
 If you want to install additional vim plugins, create a file named `my_plugins.vim` in the same folder and use `Plug` commands to add plugins.  
 
@@ -98,3 +120,7 @@ If you want to install additional vim plugins, create a file named `my_plugins.v
     Plug 'vim-syntastic/syntastic'
 
 For more supported plugin path syntax please refer to [vim-plug](https://github.com/junegunn/vim-plug).
+
+# Credits
++ [The ultimate Vim configuration](https://github.com/amix/vimrc) lots of useful vim settings in this repo are copied from here :P  
++ All colleagues who makes good suggestions :)
