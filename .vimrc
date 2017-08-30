@@ -50,8 +50,8 @@ let mapleader = ","
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ],
-      \   'right': [ [ 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], [ 'ctrlpmark' ] ],
+      \   'right': [ [ 'lineinfo' ], ['percent'], [ 'fileencoding', 'filetype' ] ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightlineFugitive',
@@ -73,7 +73,7 @@ function! LightlineReadonly()
 endfunction
 
 function! LightlineFilename()
-  let fname = expand('%:t')
+  let fname = winwidth(0) > 70 ? expand('%') : expand('%:t')
   return fname == 'ControlP' && has_key(g:lightline, 'ctrlp_item') ? g:lightline.ctrlp_item :
         \ fname =~ 'NERD_tree' ? '' :
         \ ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
@@ -86,7 +86,7 @@ function! LightlineFugitive()
     if expand('%:t') !~? 'NERD' && exists('*fugitive#head')
       let mark = '' " edit here for cool mark
       let branch = fugitive#head()
-      return branch !=# '' ? mark.branch : ''
+      return winwidth(0) > 70 ? (branch !=# '' ? mark.branch : '') : ''
     endif
   catch
   endtry
@@ -109,7 +109,7 @@ function! LightlineMode()
   let fname = expand('%:t')
   return fname == 'ControlP' ? 'CtrlP' :
         \ fname =~ 'NERD_tree' ? 'NERDTree' :
-        \ winwidth(0) > 60 ? lightline#mode() : ''
+        \ lightline#mode()
 endfunction
 
 function! CtrlPMark()
