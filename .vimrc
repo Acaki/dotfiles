@@ -33,6 +33,7 @@ Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'pangloss/vim-javascript'
 
 try
   source ~/dotfiles/my_plugins.vim
