@@ -17,20 +17,16 @@ Run the following commands in order:
     ./update.sh
 
 # Included vim plugins
-* [vim-plug](https://github.com/junegunn/vim-plug) for plugin managements, it will be automatically installed when you launch vim for the first time after installing vimrc in this repository.
-* [solarized](https://github.com/altercation/vim-colors-solarized) (default colorscheme)  
-**Note: You need to set up your terminal application properly for solarized theme to display accurate colors, please refer to their repository for details.**
-* [lightline](https://github.com/itchyny/lightline.vim)
+* [vim-plug](https://github.com/junegunn/vim-plug) for plugin managements, it will be automatically installed when you launch vim for the first time.
+* [lightline](https://github.com/itchyny/lightline.vim) for lean and highly customizable status line and tab line
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [surround](https://github.com/tpope/vim-surround)
-* [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
-* [commentary](https://github.com/tpope/vim-commentary)
+* [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) for quickly finding files
+* [commentary](https://github.com/tpope/vim-commentary) makes comment out things extremely fast
 * [fugitive](https://github.com/tpope/vim-fugitive)
+* [polyglot](https://github.com/sheerun/vim-polyglot) greatly enhances syntax highlighting for different languages
 
-# Screenshots
-![Screenshot 1](http://i.imgur.com/S1G3hiX.png)
-![Screenshot 2](http://i.imgur.com/cjCCupg.png)
-
+For more plugin specific usages please refer to the corresponding repository links above.
 # Key mappings
 ## Vim
 
@@ -88,6 +84,7 @@ Press Alt + 1, 2, ..., 9 to switch windows
     bind-key -n M-7 select-window -t 7
     bind-key -n M-8 select-window -t 8
     bind-key -n M-9 select-window -t 9
+    bind-key -n M-0 select-window -t 10
     
 **Note: start index of window has been changed to 1 instead of 0.**
 ## Screen
@@ -108,14 +105,15 @@ Press Alt + 1, 2, ..., 9 to switch screens
 # How to include your own vim config
 Create a file named `my_configs.vim` in `~/dotfiles/my_configs.vim`, then simply edit the file to add vim configs as you like.  
 
-    " Example for using default vim theme
-    color default " Use default vim theme
-    let g:lightline['colorscheme'] = 'default' " Use default lightline theme
+    " Example for using solarized theme
+    color solarized
+    let g:lightline['colorscheme'] = 'solarized' " Use solarized lightline theme
     
 If you want to install additional vim plugins, create a file named `my_plugins.vim` in the same folder and use `Plug` commands to add plugins.  
 
-    " Example for installing vim-syntastic plugin
+    " Example for installing vim-syntastic plugin and solarized theme
     Plug 'vim-syntastic/syntastic'
+    Plug 'altercation/vim-colors-solarized'
 
 For more supported plugin path syntax please refer to [vim-plug](https://github.com/junegunn/vim-plug).
 
