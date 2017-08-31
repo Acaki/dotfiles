@@ -26,14 +26,13 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
 
-Plug 'altercation/vim-colors-solarized'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
 
 try
   source ~/dotfiles/my_plugins.vim
@@ -50,7 +49,6 @@ let mapleader = ","
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], [ 'ctrlpmark' ] ],
       \   'right': [ [ 'lineinfo' ], ['percent'], [ 'fileencoding', 'filetype' ] ]
@@ -168,9 +166,14 @@ else
   set t_Co=256
 endif
 
-set background=dark
-color solarized
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
 
+set background=dark
 set autoread
 " Always show status bar
 set laststatus=2
