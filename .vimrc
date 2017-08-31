@@ -41,6 +41,7 @@ endtry
 
 call plug#end()
 
+" <leader> is mapped to ","
 let mapleader = ","
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -73,7 +74,7 @@ function! LightlineReadonly()
 endfunction
 
 function! LightlineFilename()
-  let fname = winwidth(0) > 70 ? expand('%') : expand('%:t')
+  let fname = winwidth(0) > 70 ? fnamemodify(expand('%'), ':~:.') : expand('%:t')
   return fname == 'ControlP' && has_key(g:lightline, 'ctrlp_item') ? g:lightline.ctrlp_item :
         \ fname =~ 'NERD_tree' ? '' :
         \ ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
