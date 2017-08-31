@@ -4,7 +4,6 @@ Run the following commands in order:
     cd ~
     git clone https://github.com/Acaki/dotfiles.git
     cd dotfiles
-    chmod +x bootstrap.sh
     ./bootstrap.sh
     # You can choose to install/not install individual files when prompted
     # Please note that if you choose to install .gitconfig the script will ask you for entering name and email that will be used in git.
@@ -15,7 +14,6 @@ If any files you choose to install has already exists in your home directory, it
 Run the following commands in order:  
 
     cd ~/dotfiles
-    chmod +x update.sh
     ./update.sh
 
 # Included vim plugins
