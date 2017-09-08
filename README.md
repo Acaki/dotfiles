@@ -56,6 +56,9 @@ For more plugin specific usages please refer to the corresponding repository lin
     nmap <C-h> <C-W>h
     nmap <C-l> <C-W>l
 
+    " Toggle scroll binding
+    nmap <leader>sb :windo set scb!<cr>
+
     " Opens a new tab with the current buffer's path
     " Super useful when editing files in the same directory
     nmap <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
