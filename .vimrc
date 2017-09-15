@@ -273,9 +273,6 @@ nmap <leader>p :setlocal paste!<cr>
 " Misc
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
-" Return to last edit position when opening files (You want this!)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
 " Turn persistent undo on 
 " means that you can undo even when you close a buffer/VIM
 silent !mkdir -p ~/.vim/undodir
