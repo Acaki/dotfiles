@@ -273,6 +273,7 @@ nmap <leader>p :setlocal paste!<cr>
 " Misc
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
+set diffopt=vertical
 " Turn persistent undo on 
 " means that you can undo even when you close a buffer/VIM
 silent !mkdir -p ~/.vim/undodir
