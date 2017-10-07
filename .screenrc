@@ -8,11 +8,7 @@ termcapinfo xterm* ti@:te@
 hardstatus alwayslastline
 hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d %{W}%C%A%{g}]'
 
-# Screen index start from 1
-bind c screen 1
-bind 0 select 10 
-screen 1
-
+bindkey "^[`" select 0
 bindkey "^[1" select 1
 bindkey "^[2" select 2
 bindkey "^[3" select 3

@@ -76,8 +76,9 @@ For more detailed settings please refer to comments in .vimrc file.
 ## Tmux
 Prefix key is changed to `Ctrl + A`
 
-Press Alt + 1, 2, ..., 9 to switch windows
+Press Alt + `, 1, 2, ..., 9 to switch windows
 
+    bind-key -n M-` select-window -t 0
     bind-key -n M-1 select-window -t 1
     bind-key -n M-2 select-window -t 2
     bind-key -n M-3 select-window -t 3
@@ -89,10 +90,10 @@ Press Alt + 1, 2, ..., 9 to switch windows
     bind-key -n M-9 select-window -t 9
     bind-key -n M-0 select-window -t 10
     
-**Note: start index of window has been changed to 1 instead of 0.**
 ## Screen
-Press Alt + 1, 2, ..., 9 to switch screens
+Press Alt + `, 1, 2, ..., 9 to switch screens
 
+    bindkey "^[`" select 0
     bindkey "^[1" select 1
     bindkey "^[2" select 2
     bindkey "^[3" select 3
@@ -104,7 +105,6 @@ Press Alt + 1, 2, ..., 9 to switch screens
     bindkey "^[9" select 9
     bindkey "^[0" select 10
 
-**Note: start index of screen has been changed to 1 instead of 0.**
 # How to include your own vim config
 Create a file named `my_configs.vim` in `~/dotfiles/my_configs.vim`, then simply edit the file to add vim configs as you like.  
 
