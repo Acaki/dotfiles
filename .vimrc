@@ -29,6 +29,7 @@ call plug#begin()
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': [ 'CtrlP', 'CtrlPMRU', 'CtrlPBuffer' ] }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
