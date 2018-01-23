@@ -34,6 +34,7 @@ Plug 'ctrlpvim/ctrlp.vim', { 'on': [ 'CtrlP', 'CtrlPMRU', 'CtrlPBuffer' ] }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
+Plug 'joshdick/onedark.vim'
 
 try
   source ~/dotfiles/my_plugins.vim
@@ -50,6 +51,7 @@ let mapleader = ","
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
+      \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], [ 'ctrlpmark' ] ],
       \   'right': [ [ 'lineinfo' ], ['percent'], [ 'fileencoding', 'filetype' ] ]
@@ -175,6 +177,8 @@ if &term =~ '256color'
 endif
 
 set background=dark
+color onedark
+set termguicolors
 set autoread
 " Always show status bar
 set laststatus=2
