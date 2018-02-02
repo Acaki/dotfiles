@@ -160,6 +160,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 """""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=utf8
 if has('gui_running')
+  set guifont=Consolas:h14
   " Avoid garbled characters in Chinese language windows OS
   let $LANG='en'
   set langmenu=en
