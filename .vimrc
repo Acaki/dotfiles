@@ -79,6 +79,8 @@ nmap <leader>j :History<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=utf8
 if has('gui_running')
+  set guifont=Consolas:h14
+  set lines=40 columns=120
   " Avoid garbled characters in Chinese language windows OS
   let $LANG='en'
   set langmenu=en
