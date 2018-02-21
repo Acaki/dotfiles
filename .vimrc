@@ -27,7 +27,6 @@ endif
 call plug#begin()
 
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
@@ -140,10 +139,6 @@ endfunction
 function! CtrlPStatusFunc_2(str)
   return lightline#statusline(0)
 endfunction
-
-nmap <leader>n :NERDTreeToggle<cr>
-" Open NERDTree panel on the right side
-let g:NERDTreeWinPos = "right"
 
 nmap <leader>f :Files<cr>
 nmap <leader>j :History<cr>
