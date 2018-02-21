@@ -30,10 +30,11 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'ctrlpvim/ctrlp.vim', { 'on': [ 'CtrlP', 'CtrlPMRU', 'CtrlPBuffer' ] }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 try
   source ~/dotfiles/my_plugins.vim
@@ -144,12 +145,8 @@ nmap <leader>n :NERDTreeToggle<cr>
 " Open NERDTree panel on the right side
 let g:NERDTreeWinPos = "right"
 
-nmap <leader>f :CtrlP<cr>
-nmap <leader>j :CtrlPMRU<cr>
-nmap <leader>b :CtrlPBuffer<cr>
-" Fix for slow exiting
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
+nmap <leader>f :Files<cr>
+nmap <leader>j :History<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
