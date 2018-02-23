@@ -109,7 +109,6 @@ set ttimeoutlen=10
 set noshowmode
 set hidden
 set wildmenu
-set autochdir
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
