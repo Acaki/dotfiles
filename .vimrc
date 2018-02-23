@@ -104,10 +104,12 @@ set laststatus=2
 set showtabline=2
 " Reduce delay when exiting insert mode
 set ttyfast
+set lazyredraw
 set ttimeoutlen=10
 set noshowmode
 set hidden
 set wildmenu
+set autochdir
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
