@@ -188,7 +188,7 @@ nmap <leader>tc :tabclose<cr>
 nmap <leader>tm :tabmove
 
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+:nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " Toggle paste mode on and off
 nmap <leader>p :setlocal paste!<cr>
