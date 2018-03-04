@@ -76,7 +76,7 @@ nmap <leader>j :History<cr>
 " General configs
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
-set encoding=utf8
+set encoding=utf-8
 if has('gui_running')
   set guifont=Consolas:h14
   set lines=40 columns=120
@@ -188,7 +188,10 @@ nmap <leader>tc :tabclose<cr>
 nmap <leader>tm :tabmove
 
 " Remove the Windows ^M - when the encodings gets messed up
-:nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+
+" Correct indentation
+map <F6> mzgg=G`z
 
 " Toggle paste mode on and off
 nmap <leader>p :setlocal paste!<cr>
