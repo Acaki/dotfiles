@@ -102,13 +102,15 @@ set autoread
 set laststatus=2
 " Always show tab bar
 set showtabline=2
-" Reduce delay when exiting insert mode
 set ttyfast
-set lazyredraw
+" Reduce delay when exiting insert mode
 set ttimeoutlen=10
 set noshowmode
 set hidden
 set wildmenu
+" Show line number
+set nu
+set synmaxcol=200
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
