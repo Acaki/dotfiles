@@ -110,7 +110,7 @@ set hidden
 set wildmenu
 " Show line number
 set nu
-set synmaxcol=200
+set synmaxcol=500
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
