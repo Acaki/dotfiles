@@ -89,13 +89,6 @@ else
   set t_Co=256
 endif
 
-if &term =~ '256color'
-  " disable Background Color Erase (BCE) so that color schemes
-  " render properly when inside 256-color tmux and GNU screen.
-  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
-
 set background=dark
 set autoread
 " Always show status bar
@@ -110,6 +103,7 @@ set hidden
 set wildmenu
 " Show line number
 set nu
+set cursorline
 set synmaxcol=500
 
 
