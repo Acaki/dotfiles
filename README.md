@@ -18,13 +18,14 @@ Run the following commands in order:
 
 # Included vim plugins
 * [vim-plug](https://github.com/junegunn/vim-plug) for plugin managements, it will be automatically installed when you launch vim for the first time.
-* [lightline](https://github.com/itchyny/lightline.vim) for lean and highly customizable status line and tab line
-* [nerdtree](https://github.com/scrooloose/nerdtree)
-* [surround](https://github.com/tpope/vim-surround)
-* [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) for quickly finding files
-* [commentary](https://github.com/tpope/vim-commentary) makes comment out things extremely fast
-* [fugitive](https://github.com/tpope/vim-fugitive)
-* [polyglot](https://github.com/sheerun/vim-polyglot) greatly enhances syntax highlighting for different languages
+* [vim-airline](https://github.com/vim-airline/vim-airline) for plugin managements, it will be automatically installed when you launch vim for the first time.
+* [vim-surround](https://github.com/tpope/vim-surround)
+* [vim-repeat](https://github.com/tpope/vim-repeat) make . more powerful
+* [vim-commentary](https://github.com/tpope/vim-commentary) makes comment out things extremely fast
+* [vim-fugitive](https://github.com/tpope/vim-fugitive) git integration for vim
+* [syntastic](https://github.com/vim-syntastic/syntastic) syntax checker for multiple languages
+* [vim-javascript](https://github.com/pangloss/vim-javascript) enhances javascript syntax highlighting
+* [fzf](https://github.com/junegunn/fzf) for fast file search
 
 For more plugin specific usages please refer to the corresponding repository links above.
 # Key mappings
