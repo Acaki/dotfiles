@@ -32,7 +32,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'sheerun/vim-polyglot'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-syntastic/syntastic'
+Plug 'pangloss/vim-javascript'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -47,7 +49,7 @@ call plug#end()
 let mapleader = ","
 
 """""""""""""""""""""""""""""""""""""""""""""""""
-" Configuration for specific plugins 
+" Configuration for specific plugins
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
@@ -70,6 +72,11 @@ nmap <leader>+ <Plug>AirlineSelectNextTab
 
 nmap <leader>f :Files<cr>
 nmap <leader>j :History<cr>
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -98,6 +105,7 @@ set showtabline=2
 set ttyfast
 " Reduce delay when exiting insert mode
 set ttimeoutlen=10
+set updatetime=100
 set noshowmode
 set hidden
 set wildmenu
@@ -109,7 +117,7 @@ set synmaxcol=500
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Text edit related
-" 
+"
 """""""""""""""""""""""""""""""""""""""""""""""""
 set shiftwidth=2
 set tabstop=2
@@ -137,12 +145,12 @@ set splitbelow
 
 " Ignore case when searching
 set ignorecase
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 " Highlight search results
 set hlsearch
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
@@ -197,7 +205,7 @@ nmap <leader>p :setlocal paste!<cr>
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
 set diffopt=vertical
-" Turn persistent undo on 
+" Turn persistent undo on
 " means that you can undo even when you close a buffer/VIM
 silent !mkdir -p ~/.vim/undodir
 set undodir=~/.vim/undodir
