@@ -33,7 +33,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-syntastic/syntastic'
 Plug 'pangloss/vim-javascript'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -62,13 +61,6 @@ let g:airline#extensions#tabline#show_tab_type = 0
 nmap <leader>f :Files<cr>
 nmap <leader>j :History<cr>
 nmap <leader>t :Tags<cr>
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['standard']
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " General configs
