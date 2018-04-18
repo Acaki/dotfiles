@@ -32,7 +32,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -89,7 +88,6 @@ set showtabline=2
 set ttyfast
 " Reduce delay when exiting insert mode
 set ttimeoutlen=10
-set updatetime=100
 set noshowmode
 set hidden
 set wildmenu
