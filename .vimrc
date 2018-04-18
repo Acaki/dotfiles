@@ -61,6 +61,7 @@ let g:airline#extensions#tabline#show_tab_type = 0
 nmap <leader>f :Files<cr>
 nmap <leader>j :History<cr>
 nmap <leader>t :Tags<cr>
+nmap <leader>c :History:<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " General configs
@@ -68,7 +69,7 @@ nmap <leader>t :Tags<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=utf-8
 if has('gui_running')
-  set guifont=Consolas:h14
+  set guifont=Hack:h14
   set lines=40 columns=120
   " Avoid garbled characters in Chinese language windows OS
   let $LANG='en'
@@ -94,8 +95,6 @@ set hidden
 set wildmenu
 " Show line number
 set nu
-set cursorline
-set synmaxcol=500
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -150,11 +149,6 @@ set backspace=eol,start,indent
 """""""""""""""""""""""""""""""""""""""""""""""""
 " For fast saving, no more :W bullshit
 nmap <leader>w :w!<cr>
-
-" Mappings for switching buffers
-nnoremap ]b :bn<cr>
-nnoremap [b :bp<cr>
-nnoremap <leader>c :bp\|bd #<cr>
 
 nnoremap <leader><C-]> <C-w><C-]><C-w>T
 
