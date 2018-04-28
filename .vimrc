@@ -83,19 +83,12 @@ else
 endif
 
 set background=dark
-set autoread
-" Always show status bar
-set laststatus=2
-" Always show tab bar
-set showtabline=2
+set lazyredraw
 set ttyfast
 " Reduce delay when exiting insert mode
 set ttimeoutlen=10
 set noshowmode
-set hidden
 set wildmenu
-" Show line number
-set nu
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -109,7 +102,7 @@ set expandtab
 " Be smart when using tabs ;)
 set smarttab
 
-set scrolloff=5
+set scrolloff=3
 
 " Show matching brackets when text indicator is over them
 set showmatch
@@ -135,11 +128,6 @@ set hlsearch
 " Makes search act like search in modern browsers
 set incsearch
 
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
-set nowb
-set noswapfile
-
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 
@@ -150,8 +138,6 @@ set backspace=eol,start,indent
 """""""""""""""""""""""""""""""""""""""""""""""""
 " For fast saving, no more :W bullshit
 nmap <leader>w :w!<cr>
-
-nnoremap <leader><C-]> <C-w><C-]><C-w>T
 
 " Disable highlight when <leader><cr> is pressed
 nmap <leader><cr> :noh<cr>
@@ -164,18 +150,6 @@ nmap <C-l> <C-W>l
 
 " Toggle scroll binding
 nmap <leader>sb :windo set scb!<cr>
-
-" Opens a new tab with the current buffer's path
-" Super useful when editing files in the same directory
-nmap <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
-nmap <leader>tc :tabclose<cr>
-nmap <leader>tm :tabmove
-
-" Remove the Windows ^M - when the encodings gets messed up
-nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
-
-" Correct indentation
-map <F6> mzgg=G`z
 
 " Toggle paste mode on and off
 nmap <leader>p :setlocal paste!<cr>
