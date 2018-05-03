@@ -57,8 +57,12 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-let g:airline_skip_empty_sections = 1
+let g:airline#extensions#whitespace#enabled = 0
 let g:airline_section_x=''
+function! AirlineInit()
+  let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', ' : %c'])
+endfunction
+autocmd User AirlineAfterInit call AirlineInit()
 
 nmap <leader>f :Files<cr>
 nmap <leader>j :History<cr>
