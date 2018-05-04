@@ -65,7 +65,7 @@ endfunction
 autocmd User AirlineAfterInit call AirlineInit()
 
 nmap <leader>f :Files<cr>
-nmap <leader>j :History<cr>
+nmap <leader>h :History<cr>
 nmap <leader>t :Tags<cr>
 nmap <leader>c :History:<cr>
 
