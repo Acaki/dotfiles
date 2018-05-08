@@ -32,7 +32,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'pangloss/vim-javascript'
+Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -65,6 +66,7 @@ endfunction
 autocmd User AirlineAfterInit call AirlineInit()
 
 nmap <leader>f :Files<cr>
+nmap <leader>b :Buffers<cr>
 nmap <leader>h :History<cr>
 nmap <leader>t :Tags<cr>
 nmap <leader>c :History:<cr>
@@ -91,6 +93,7 @@ set lazyredraw
 set ttyfast
 " Reduce delay when exiting insert mode
 set ttimeoutlen=10
+set updatetime=100
 set noshowmode
 set wildmenu
 
