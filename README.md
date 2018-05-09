@@ -18,14 +18,17 @@ Run the following commands in order:
 
 # Included vim plugins
 * [vim-plug](https://github.com/junegunn/vim-plug) for plugin managements, it will be automatically installed when you launch vim for the first time.
-* [vim-airline](https://github.com/vim-airline/vim-airline) for plugin managements, it will be automatically installed when you launch vim for the first time.
+* [vim-airline](https://github.com/vim-airline/vim-airline) for fancy status and tab line
+* [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) for even more fancy colors
 * [vim-surround](https://github.com/tpope/vim-surround)
 * [vim-repeat](https://github.com/tpope/vim-repeat) make . more powerful
 * [vim-commentary](https://github.com/tpope/vim-commentary) makes comment out things extremely fast
 * [vim-fugitive](https://github.com/tpope/vim-fugitive) git integration for vim
-* [syntastic](https://github.com/vim-syntastic/syntastic) syntax checker for multiple languages
-* [vim-javascript](https://github.com/pangloss/vim-javascript) enhances javascript syntax highlighting
+* [vim-unimpaired](https://github.com/tpope/vim-unimpaired) some very useful key mappings
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter) showing line changes in git project files
+* [vim-polyglot](https://github.com/sheerun/vim-polyglot) enhances syntax highlighting for various language
 * [fzf](https://github.com/junegunn/fzf) for fast file search
+* [fzf.vim](https://github.com/junegunn/fzf.vim) fzf wrapper for vim
 
 For more plugin specific usages please refer to the corresponding repository links above.
 # Key mappings
@@ -34,19 +37,15 @@ For more plugin specific usages please refer to the corresponding repository lin
     " <leader> is mapped to ","
     let mapleader = ","
     
-    nmap <leader>n :NERDTreeToggle<cr>
-    
-    nmap <leader>f :CtrlP<cr>
-    nmap <leader>j :CtrlPMRU<cr>
-    nmap <leader>b :CtrlPBuffer<cr>
+    " Mappings for fzf
+    nmap <leader>f :Files<cr>
+    nmap <leader>b :Buffers<cr>
+    nmap <leader>h :History<cr>
+    nmap <leader>t :Tags<cr>
+    nmap <leader>c :History:<cr>
 
     " For fast saving, no more :W bullshit
     nmap <leader>w :w!<cr>
-    
-    " Mappings for switching buffers
-    nnoremap ]b :bn<cr>
-    nnoremap [b :bp<cr>
-    nnoremap <leader>c :bp\|bd #<cr>
 
     " Disable highlight when <leader><cr> is pressed
     nmap <leader><cr> :noh<cr>
@@ -60,12 +59,6 @@ For more plugin specific usages please refer to the corresponding repository lin
     " Toggle scroll binding
     nmap <leader>sb :windo set scb!<cr>
 
-    " Opens a new tab with the current buffer's path
-    " Super useful when editing files in the same directory
-    nmap <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
-    nmap <leader>tc :tabclose<cr>
-    nmap <leader>tm :tabmove
-
     " Remove the Windows ^M - when the encodings gets messed up
     noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
@@ -75,7 +68,7 @@ For more plugin specific usages please refer to the corresponding repository lin
 For more detailed settings please refer to comments in .vimrc file.  
   
 ## Tmux
-Prefix key is changed to `Ctrl + A`
+Prefix key is changed to `Ctrl + J`
 
 Press Alt + `, 1, 2, ..., 9 to switch windows
 
@@ -108,6 +101,7 @@ Press Alt + `, 1, 2, ..., 9 to switch screens
 
 # How to include your own vim config
 Create a file named `my_configs.vim` in `~/dotfiles/my_configs.vim`, then simply edit the file to add vim configs as you like.  
+Sample files are located in example/ folder.  
 
     " Example for using solarized theme
     color solarized
@@ -122,5 +116,5 @@ If you want to install additional vim plugins, create a file named `my_plugins.v
 For more supported plugin path syntax please refer to [vim-plug](https://github.com/junegunn/vim-plug).
 
 # Credits
-+ [The ultimate Vim configuration](https://github.com/amix/vimrc) lots of useful vim settings in this repo are copied from here :P  
++ [The ultimate Vim configuration](https://github.com/amix/vimrc) some useful vim settings in this repo are copied from here :P  
 + All colleagues who makes good suggestions :)
