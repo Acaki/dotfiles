@@ -66,6 +66,7 @@ function! AirlineInit()
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
 
+" Mappings for fzf
 nmap <leader>f :Files<cr>
 nmap <leader>b :Buffers<cr>
 nmap <leader>h :History<cr>
