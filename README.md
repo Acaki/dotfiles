@@ -68,7 +68,7 @@ For more plugin specific usages please refer to the corresponding repository lin
 For more detailed settings please refer to comments in .vimrc file.  
   
 ## Tmux
-Prefix key is changed to `Ctrl + J`
+Prefix key is changed to `Ctrl + a`
 
 Press Alt + `, 1, 2, ..., 9 to switch windows
 
