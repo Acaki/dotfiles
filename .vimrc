@@ -54,8 +54,10 @@ let mapleader = ","
 """""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_section_x=''
@@ -81,6 +83,8 @@ nmap <leader>b :Buffers<cr>
 nmap <leader>h :History<cr>
 nmap <leader>t :Tags<cr>
 nmap <leader>c :History:<cr>
+
+let g:gitgutter_map_keys = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " General configs
