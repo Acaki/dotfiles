@@ -84,7 +84,9 @@ nmap <leader>h :History<cr>
 nmap <leader>t :Tags<cr>
 nmap <leader>c :History:<cr>
 
-let g:gitgutter_map_keys = 0
+nmap ghp <Plug>GitGutterPreviewHunk
+nmap ghs <Plug>GitGutterStageHunk
+nmap ghu <Plug>GitGutterUndoHunk
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " General configs
