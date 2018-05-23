@@ -116,8 +116,14 @@ set ttyfast
 " Reduce delay when exiting insert mode
 set ttimeoutlen=10
 set updatetime=100
+set laststatus=2
 set noshowmode
 set wildmenu
+" Turn backup off
+set nobackup
+set nowb
+set noswapfile
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -130,6 +136,10 @@ set tabstop=2
 set expandtab
 " Be smart when using tabs ;)
 set smarttab
+" Shift to certain columns, not just n spaces
+set shiftround
+" Break long lines by word instead of char
+set linebreak
 
 set scrolloff=3
 
@@ -141,6 +151,8 @@ set mat=1
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+
+set autowrite
 
 set clipboard=exclude:.*
 
