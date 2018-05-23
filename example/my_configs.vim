@@ -6,6 +6,8 @@ let g:ale_fixers = {
       \  'javascript': ['standard'],
       \}
 let g:ale_set_highlights = 0
+let g:ale_sign_warning = '▲'
+let g:ale_sign_error = '✗'
 nmap <leader>af = :ALEFix<CR>
 nmap <silent> <leader>an <Plug>(ale_next)
 nmap <silent> <leader>ap <Plug>(ale_previous)
