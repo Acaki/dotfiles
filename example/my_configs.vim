@@ -8,6 +8,7 @@ let g:ale_fixers = {
 let g:ale_set_highlights = 0
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
+let g:ycm_autoclose_preview_window_after_insertion = 1
 nmap <leader>af = :ALEFix<CR>
 nmap <silent> <leader>an <Plug>(ale_next)
 nmap <silent> <leader>ap <Plug>(ale_previous)

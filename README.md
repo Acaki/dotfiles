@@ -44,8 +44,10 @@ For more plugin specific usages please refer to the corresponding repository lin
     nmap <leader>t :Tags<cr>
     nmap <leader>c :History:<cr>
 
-    " For fast saving, no more :W bullshit
-    nmap <leader>w :w!<cr>
+    " GitGutter
+    nmap ghp <Plug>GitGutterPreviewHunk
+    nmap ghs <Plug>GitGutterStageHunk
+    nmap ghu <Plug>GitGutterUndoHunk
 
     " Disable highlight when <leader><cr> is pressed
     nmap <leader><cr> :noh<cr>
@@ -58,9 +60,6 @@ For more plugin specific usages please refer to the corresponding repository lin
 
     " Toggle scroll binding
     nmap <leader>sb :windo set scb!<cr>
-
-    " Remove the Windows ^M - when the encodings gets messed up
-    noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
     " Toggle paste mode on and off
     nmap <leader>p :setlocal paste!<cr>

@@ -136,7 +136,7 @@ let g:gitgutter_sign_modified_removed = '∙'
 """""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=utf-8
 if has('gui_running')
-  set guifont=Hack:h12
+  set guifont=Iosevka:h12
   set lines=40 columns=120
   " Avoid garbled characters in Chinese language windows OS
   let $LANG='en'
@@ -160,7 +160,8 @@ set wildmenu
 set nobackup
 set nowb
 set noswapfile
-
+set signcolumn=yes
+set hidden
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -214,8 +215,9 @@ set backspace=eol,start,indent
 " Key mappings
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
-" For fast saving, no more :W bullshit
-nmap <leader>w :w!<cr>
+" For fast quitting and saving, no more :W bullshit
+command! Q q
+command! W w
 
 " Disable highlight when <leader><cr> is pressed
 nmap <leader><cr> :noh<cr>
