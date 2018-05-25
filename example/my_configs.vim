@@ -1,20 +1,18 @@
 set number relativenumber
-let g:airline_powerline_fonts = 1
 set termguicolors
+set scrolljump=10
 color onedark
 let g:ale_fixers = {
       \  'javascript': ['standard'],
       \}
-let g:ale_set_highlights = 0
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 nmap <leader>af = :ALEFix<CR>
-nmap <silent> <leader>an <Plug>(ale_next)
-nmap <silent> <leader>ap <Plug>(ale_previous)
-nmap <leader><leader>t :vert ter ++kill=SIGINT<CR>
-tmap <C-w>q <C-w>:hide<CR>
-tmap <C-n> <C-w>N<CR>
+nmap <leader>an <Plug>(ale_next_wrap)
+nmap <leader>ap <Plug>(ale_previous_wrap)
+nmap <leader><leader>t :vert ter<CR>
+tmap <C-w>q <C-W>:hide<CR>
 tmap <C-h> <C-W>h
 tmap <C-j> <C-W>j
 tmap <C-k> <C-W>k
