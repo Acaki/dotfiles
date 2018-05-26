@@ -1,12 +1,15 @@
 #!/bin/bash
 
+# If you are using windows, run git bash as administrator
+# and run "export MSYS=winsymlinks:nativestrict" before running this script
+
 cd "$(dirname "${BASH_SOURCE}")";
 
 olddir=$HOME/dotfiles_old
 files=".vimrc .gitconfig .screenrc .tmux.conf"
 
 echo "Fetching newest version of this repository..."
-git pull
+git pull origin master
 
 read -p "Do you want to backup existing dotfiles? [y/n] " backup
 if [[ $backup =~ ^[Yy]$ ]] && [ ! -d $olddir ]; then
