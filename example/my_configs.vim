@@ -2,6 +2,7 @@ set number relativenumber
 set termguicolors
 set scrolljump=10
 color onedark
+let g:airline_powerline_fonts = 1
 let g:ale_fixers = {
       \  'javascript': ['standard'],
       \}
