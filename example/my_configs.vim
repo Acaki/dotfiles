@@ -1,4 +1,3 @@
-set number relativenumber
 set termguicolors
 set scrolljump=10
 color onedark
@@ -12,8 +11,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 nmap <leader>af = :ALEFix<CR>
 nmap <leader>an <Plug>(ale_next_wrap)
 nmap <leader>ap <Plug>(ale_previous_wrap)
-nmap <leader><leader>t :vert ter<CR>
-tmap <C-w>q <C-W>:hide<CR>
+nmap <leader><leader>t :vert ter ++kill=kill<CR>
+tmap <C-W>q <C-W>:hide<CR>
+tmap <C-W>gt <C-W>:tabn<CR>
+tmap <C-W>gT <C-W>:tabp<CR>
 tmap <C-h> <C-W>h
 tmap <C-j> <C-W>j
 tmap <C-k> <C-W>k
