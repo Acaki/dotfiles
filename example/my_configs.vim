@@ -1,16 +1,21 @@
 set termguicolors
-set scrolljump=10
 color onedark
-let g:airline_powerline_fonts = 1
+let g:lightline['colorscheme'] = 'onedark'
+set signcolumn=yes
 let g:ale_fixers = {
-      \  'javascript': ['standard'],
+      \  'javascript': ['standard']
       \}
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
+let g:ale_set_highlights = 0
 set completeopt-=preview
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 nmap <leader>af = :ALEFix<CR>
-nmap <leader>an <Plug>(ale_next_wrap)
-nmap <leader>ap <Plug>(ale_previous_wrap)
+nmap <C-n> <Plug>(ale_next_wrap)
+nmap <C-p> <Plug>(ale_previous_wrap)
 nmap <leader><leader>t :vert ter ++kill=kill<CR>
 tmap <C-W>q <C-W>:hide<CR>
 tmap <C-W>gt <C-W>:tabn<CR>

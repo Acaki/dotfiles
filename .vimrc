@@ -32,6 +32,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-abolish'
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -45,7 +46,7 @@ endtry
 call plug#end()
 
 " <leader> is mapped to ","
-let mapleader = ","
+let mapleader = " "
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration for specific plugins
@@ -53,7 +54,6 @@ let mapleader = ","
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [['mode', 'paste'], ['fugitive'], ['readonly', 'relativepath', 'modified']],
       \   'right': [['lineinfo'], ['percent'], ['linter_warnings', 'linter_errors', 'linter_ok']] 
@@ -114,7 +114,7 @@ endfunction
 
 " Mappings for fzf
 nmap <leader>f :Files<cr>
-nmap <leader>b :Buffers<cr>
+nmap <leader>j :Buffers<cr>
 nmap <leader>h :History<cr>
 nmap <leader>t :Tags<cr>
 nmap <leader>c :History:<cr>
@@ -154,7 +154,6 @@ set wildmenu
 set nobackup
 set nowb
 set noswapfile
-set signcolumn=yes
 set hidden
 
 
@@ -210,6 +209,9 @@ set backspace=eol,start,indent
 " For fast quitting and saving, no more :W bullshit
 command! Q q
 command! W w
+nmap <leader>w :w<cr>
+nmap <leader>x :x<cr>
+nmap <leader>q :q<cr>
 
 " Disable highlight when <leader><cr> is pressed
 nmap <leader><cr> :noh<cr>
