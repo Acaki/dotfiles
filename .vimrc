@@ -46,6 +46,7 @@ endtry
 call plug#end()
 
 " <leader> is mapped to ","
+nnoremap <space> <nop>
 let mapleader = " "
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -155,6 +156,7 @@ set nobackup
 set nowb
 set noswapfile
 set hidden
+set autoread
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
