@@ -18,6 +18,7 @@ nmap <leader>a = :ALEFix<CR>
 nmap <C-n> <Plug>(ale_next_wrap)
 nmap <C-p> <Plug>(ale_previous_wrap)
 nmap <leader><leader>t :vert ter ++kill=kill<CR>
+nnoremap <silent> <leader>g :Rg <C-R><C-W><CR>
 tmap <C-W>q <C-W>:hide<CR>
 tmap <C-W>gt <C-W>:tabn<CR>
 tmap <C-W>gT <C-W>:tabp<CR>
