@@ -2,12 +2,19 @@
   l = log
   s = status
   d = diff
+  dc = diff --cached
   a = add
+  aa = add -u
+  ap = add --patch
   r = reset
   b = branch
   c = commit
   ca = commit -av
+  cm = commit -m
+  u = checkout --
   amend = commit --amend --reuse-message=HEAD
+  pl = pull
+  ph = push
   # Switch to a branch, creating it if necessary
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 [core]
