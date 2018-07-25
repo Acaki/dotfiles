@@ -87,21 +87,6 @@ Press Alt + `, 1, 2, ..., 9 to switch windows
     bind-key -n M-8 select-window -t 8
     bind-key -n M-9 select-window -t 9
     bind-key -n M-0 select-window -t 10
-    
-## Screen
-Press Alt + `, 1, 2, ..., 9 to switch screens
-
-    bindkey "^[`" select 0
-    bindkey "^[1" select 1
-    bindkey "^[2" select 2
-    bindkey "^[3" select 3
-    bindkey "^[4" select 4
-    bindkey "^[5" select 5
-    bindkey "^[6" select 6
-    bindkey "^[7" select 7
-    bindkey "^[8" select 8
-    bindkey "^[9" select 9
-    bindkey "^[0" select 10
 
 # How to include your own vim config
 Create a file named `my_configs.vim` in `~/dotfiles/my_configs.vim`, then simply edit the file to add vim configs as you like.  
