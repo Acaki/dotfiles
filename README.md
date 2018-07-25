@@ -29,6 +29,16 @@ Run the following commands in order:
 * [fzf](https://github.com/junegunn/fzf) for fast file search
 * [fzf.vim](https://github.com/junegunn/fzf.vim) fzf wrapper for vim
 
+# Additional vim plugins
+These are the plugins that I use personally, they depend on newer environment or other dependencies so I don't enable them by default. 
+(available in example/ folder, you need to copy my_configs.vim and my_plugins.vim in that folder to ~/dotfiles, VIM 8 AND TRUE COLOR TERMINAL AND POWERLINE FONTS ARE REQUIRED TO RUN THESE PLUGINS COREECTLY)
+* [onedark.vim](https://github.com/joshdick/onedark.vim) onedark colorscheme
+* [ale](https://github.com/joshdick/onedark.vim) very good async linting engine
+* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) lots of auto completion
+* [ultisnips](https://github.com/SirVer/ultisnips) snippet solution for vim
+* [vim-snippets](https://github.com/honza/vim-snippets) collections of snippets
+* [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags) auto ctags generation during editing
+
 For more plugin specific usages please refer to the corresponding repository links above.
 # Key mappings
 ## Vim
