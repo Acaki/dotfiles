@@ -5,10 +5,9 @@ Run the following commands in order:
     git clone https://github.com/Acaki/dotfiles.git
     cd dotfiles
     ./bootstrap.sh
-    # You can choose to install/not install individual files when prompted
-    # Please note that if you choose to install .gitconfig the script will ask you for entering name and email that will be used in git.
     
-If any files you choose to install has already exists in your home directory, it will be moved to `~/dotfiles_old` which enables you to restore your original files after installation.
+If you choose to backup existing dotfiles, they will be moved to dotfiles_old located in your home directory.
+Fish shell config file stored in .config/fish/config.fish
 
 # How to update to latest version
 Run the following commands in order:  
@@ -90,7 +89,7 @@ Press Alt + `, 1, 2, ..., 9 to switch windows
 
 # How to include your own vim config
 Create a file named `my_configs.vim` in `~/dotfiles/my_configs.vim`, then simply edit the file to add vim configs as you like.  
-Sample files are located in example/ folder.  
+Sample files are located in example/ folder (requires vim8 and true color support terminal).  
 
     " Example for using solarized theme
     color solarized
@@ -107,4 +106,5 @@ For more supported plugin path syntax please refer to [vim-plug](https://github.
 # Credits
 + [The ultimate Vim configuration](https://github.com/amix/vimrc) some useful vim settings in this repo are copied from here :P  
 + And from here (https://github.com/statico/dotfiles/blob/master/.vim/vimrc)
++ Aaaannnd from here (https://github.com/mathiasbynens/dotfiles)
 + All colleagues who makes good suggestions :)
