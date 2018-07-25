@@ -45,7 +45,7 @@ endtry
 
 call plug#end()
 
-" <leader> is mapped to ","
+" <leader> is mapped to space bar
 nnoremap <space> <nop>
 let mapleader = " "
 
@@ -105,12 +105,22 @@ function! LightlineLinterOK() abort
   return l:counts.total == 0 ? '✓' : ''
 endfunction
 
-autocmd User ALELint call s:MaybeUpdateLightline()
+" Update lightline after :ALELint or :ALEFix has been called
+augroup ALEStatusLine
+  autocmd!
+  autocmd User ALELintPost call s:MaybeUpdateLightline()
+  autocmd User ALEFixPost call s:MaybeUpdateLightline()
+augroup end
 function! s:MaybeUpdateLightline()
   if exists('#lightline')
     call lightline#update()
   end
 endfunction
+
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
 
 " Mappings for fzf
 nmap <leader>f :Files<cr>
@@ -178,10 +188,11 @@ set scrolloff=3
 " Show matching brackets when text indicator is over them
 set showmatch
 " How many tenths of a second to blink when matching brackets
-set mat=0
+set mat=2
 
-set ai "Auto indent
-set si "Smart indent
+set ai " Auto indent
+set si " Smart indent
+set ci " Copy indent
 set wrap "Wrap lines
 
 set clipboard=exclude:.*
@@ -213,6 +224,7 @@ command! W w
 nmap <leader>w :w<cr>
 nmap <leader>x :x<cr>
 nmap <leader>q :q<cr>
+nmap <leader>e :e<cr>
 
 " Disable highlight when <leader><cr> is pressed
 nmap <leader><cr> :noh<cr>

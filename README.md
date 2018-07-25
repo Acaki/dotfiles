@@ -18,13 +18,13 @@ Run the following commands in order:
 
 # Included vim plugins
 * [vim-plug](https://github.com/junegunn/vim-plug) for plugin managements, it will be automatically installed when you launch vim for the first time.
-* [vim-airline](https://github.com/vim-airline/vim-airline) for fancy status and tab line
-* [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) for even more fancy colors
+* [lightline.vim](https://github.com/itchyny/lightline.vim) for lean and customizable status line
 * [vim-surround](https://github.com/tpope/vim-surround)
 * [vim-repeat](https://github.com/tpope/vim-repeat) make . more powerful
 * [vim-commentary](https://github.com/tpope/vim-commentary) makes comment out things extremely fast
 * [vim-fugitive](https://github.com/tpope/vim-fugitive) git integration for vim
 * [vim-unimpaired](https://github.com/tpope/vim-unimpaired) some very useful key mappings
+* [vim-abolish](https://github.com/tpope/vim-abolish) for fast changing of word style
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter) showing line changes in git project files
 * [vim-polyglot](https://github.com/sheerun/vim-polyglot) enhances syntax highlighting for various language
 * [fzf](https://github.com/junegunn/fzf) for fast file search
@@ -34,8 +34,8 @@ For more plugin specific usages please refer to the corresponding repository lin
 # Key mappings
 ## Vim
 
-    " <leader> is mapped to ","
-    let mapleader = ","
+    " <leader> is mapped to space bar
+    let mapleader = " "
     
     " Mappings for fzf
     nmap <leader>f :Files<cr>
@@ -48,6 +48,11 @@ For more plugin specific usages please refer to the corresponding repository lin
     nmap ghp <Plug>GitGutterPreviewHunk
     nmap ghs <Plug>GitGutterStageHunk
     nmap ghu <Plug>GitGutterUndoHunk
+
+    nmap <leader>w :w<cr>
+    nmap <leader>x :x<cr>
+    nmap <leader>q :q<cr>
+    nmap <leader>e :e<cr>
 
     " Disable highlight when <leader><cr> is pressed
     nmap <leader><cr> :noh<cr>
@@ -116,4 +121,5 @@ For more supported plugin path syntax please refer to [vim-plug](https://github.
 
 # Credits
 + [The ultimate Vim configuration](https://github.com/amix/vimrc) some useful vim settings in this repo are copied from here :P  
++ And from here (https://github.com/statico/dotfiles/blob/master/.vim/vimrc)
 + All colleagues who makes good suggestions :)
