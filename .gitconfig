@@ -1,17 +1,27 @@
+[alias]
+  l = log
+  s = status
+  d = diff
+  a = add
+  r = reset
+  b = branch
+  c = commit
+  ca = commit -av
+  amend = commit --amend --reuse-message=HEAD
+  # Switch to a branch, creating it if necessary
+  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 [core]
 	editor = vim
 	autocrlf = input
   whitespace = cr-at-eol
+  untrackedCache = true
 [push]
 	default = simple
 [diff]
 	tool = vimdiff
 [difftool]
   prompt = false
-[color]
-  diff = auto
-  status = auto
-  branch = auto
-  ui = true
 [include]
   path = .gitconfig.user
+[help]
+  autocorrect = 1
