@@ -1,6 +1,7 @@
 [alias]
   l = log
   s = status
+  sh = stash
   d = diff
   dc = diff --cached
   a = add
@@ -9,8 +10,10 @@
   r = reset
   b = branch
   c = commit
-  ca = commit -av
+  ca = commit -a
   cm = commit -m
+  cam = commit -am
+  cp = cherry-pick
   u = checkout --
   amend = commit --amend --reuse-message=HEAD
   pl = pull
