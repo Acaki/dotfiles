@@ -1,7 +1,18 @@
+" For italic characters
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_italic_comments = 1
+" Enable true color support
 set termguicolors
-color onedark
-let g:lightline['colorscheme'] = 'onedark'
+color nord
+let g:lightline['colorscheme'] = 'nord'
+let g:lightline['separator'] = { 'left': '', 'right': '' }
+let g:lightline['subseparator'] = { 'left': '', 'right': '' }
 set signcolumn=yes
+set number
+set relativenumber
 let g:ale_fixers = {
       \  'javascript': ['prettier_eslint'],
       \  'php': ['php_cs_fixer']
@@ -10,14 +21,11 @@ let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
 let g:ale_set_highlights = 0
 set completeopt-=preview
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsJumpForwardTrigger="<c-f>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 nmap <leader>a = :ALEFix<CR>
 nmap <C-n> <Plug>(ale_next_wrap)
 nmap <C-p> <Plug>(ale_previous_wrap)
 nmap <leader><leader>t :vert ter ++kill=kill<CR>
+" Search the word under the cursor using Rg
 nnoremap <silent> <leader>g :Rg <C-R><C-W><CR>
 tmap <C-W>q <C-W>:hide<CR>
 tmap <C-W>gt <C-W>:tabn<CR>

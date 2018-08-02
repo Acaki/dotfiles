@@ -22,7 +22,6 @@ Run the following commands in order:
 * [vim-repeat](https://github.com/tpope/vim-repeat) make . more powerful
 * [vim-commentary](https://github.com/tpope/vim-commentary) makes comment out things extremely fast
 * [vim-fugitive](https://github.com/tpope/vim-fugitive) git integration for vim
-* [vim-unimpaired](https://github.com/tpope/vim-unimpaired) some very useful key mappings
 * [vim-abolish](https://github.com/tpope/vim-abolish) for fast changing of word style
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter) showing line changes in git project files
 * [vim-polyglot](https://github.com/sheerun/vim-polyglot) enhances syntax highlighting for various language
