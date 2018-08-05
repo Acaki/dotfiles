@@ -5,14 +5,11 @@ let g:nord_italic = 1
 let g:nord_underline = 1
 let g:nord_italic_comments = 1
 " Enable true color support
-set termguicolors
 color nord
 let g:lightline['colorscheme'] = 'nord'
 let g:lightline['separator'] = { 'left': '', 'right': '' }
 let g:lightline['subseparator'] = { 'left': '', 'right': '' }
 set signcolumn=yes
-set number
-set relativenumber
 let g:ale_fixers = {
       \  'javascript': ['prettier_eslint'],
       \  'php': ['php_cs_fixer']
