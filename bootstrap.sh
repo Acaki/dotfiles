@@ -18,6 +18,8 @@ if [[ $backup =~ ^[Yy]$ ]] && [ ! -d $olddir ]; then
   printf "ok\n"
 fi
 
+mkdir -p $HOME/.config/fish
+
 for file in $files; do
   if [ -f $HOME/$file ] && [ ! -L $HOME/$file ] && [[ $backup =~ ^[Yy]$ ]]; then
     printf "Moving $HOME/$file to $olddir..."
