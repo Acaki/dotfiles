@@ -41,28 +41,27 @@ let mapleader = " "
 " Configuration for specific plugins
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
+" Lightline
 let g:lightline = {
       \ 'active': {
-      \   'left': [['mode', 'paste'], ['fugitive'], ['readonly', 'relativepath', 'modified']],
-      \   'right': [['lineinfo'], ['percent'], ['linter_warnings', 'linter_errors', 'linter_ok']] 
+      \   'left': [['mode', 'paste'], ['fugitive','filename', 'modified']],
+      \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LightlineFugitive'
       \ },
       \ 'component_expand': {
       \   'linter_warnings': 'LightlineLinterWarnings',
       \   'linter_errors': 'LightlineLinterErrors',
       \   'linter_ok': 'LightlineLinterOK'
       \ },
-      \ 'inactive': {
-      \   'left': [['filename']],
-      \   'right': [['lineinfo']]
+      \ 'component_type': {
+      \   'readonly': 'error',
+      \   'linter_warnings': 'warning',
+      \   'linter_errors': 'error'
       \ },
-      \ 'component_function': {
-      \   'fugitive': 'LightlineFugitive'
-      \ },
-			\ 'component_type': {
-			\   'linter_warnings': 'warning',
-			\   'linter_errors': 'error'
-			\ }
       \ }
+
 function! LightlineFugitive()
   if exists('*fugitive#head')
     let branch = fugitive#head()
@@ -93,17 +92,25 @@ function! LightlineLinterOK() abort
   return l:counts.total == 0 ? '✓' : ''
 endfunction
 
-" Update lightline after :ALELint or :ALEFix has been called
-augroup ALEStatusLine
-  autocmd!
-  autocmd User ALELintPost call s:MaybeUpdateLightline()
-  autocmd User ALEFixPost call s:MaybeUpdateLightline()
-augroup end
+" Update and show lightline but only if it's visible (e.g., not in Goyo)
 function! s:MaybeUpdateLightline()
   if exists('#lightline')
     call lightline#update()
   end
 endfunction
+
+" Update the lightline scheme from the colorscheme. Hopefully.
+function! s:UpdateLightlineColorScheme()
+  let g:lightline.colorscheme = g:colors_name
+  call lightline#init()
+endfunction
+
+augroup _lightline
+  autocmd!
+  autocmd User ALELintPost call s:MaybeUpdateLightline()
+  autocmd User ALEFixPost call s:MaybeUpdateLightline()
+  autocmd ColorScheme * call s:UpdateLightlineColorScheme()
+augroup END
 
 let g:gitgutter_sign_added = '∙'
 let g:gitgutter_sign_modified = '∙'
