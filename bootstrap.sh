@@ -6,7 +6,7 @@
 cd "$(dirname "${BASH_SOURCE}")";
 
 olddir=$HOME/dotfiles_old
-files=".vimrc .gitconfig .tmux.conf .config/fish/config.fish .xprofile .makepkg.conf"
+files=".vimrc .gitconfig .tmux.conf .config/fish/config.fish .config/alacritty/alacritty.yml .xprofile .makepkg.conf"
 
 echo "Fetching newest version of this repository..."
 git pull origin master
@@ -18,7 +18,7 @@ if [[ $backup =~ ^[Yy]$ ]] && [ ! -d $olddir ]; then
   printf "ok\n"
 fi
 
-mkdir -p $HOME/.config/fish
+mkdir -p $HOME/.config/fish $HOME/.config/alacritty
 
 for file in $files; do
   if [ -f $HOME/$file ] && [ ! -L $HOME/$file ] && [[ $backup =~ ^[Yy]$ ]]; then
