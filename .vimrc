@@ -21,7 +21,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-abolish'
-Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -112,28 +111,12 @@ augroup _lightline
   autocmd ColorScheme * call s:UpdateLightlineColorScheme()
 augroup END
 
-let g:gitgutter_sign_added = '∙'
-let g:gitgutter_sign_modified = '∙'
-let g:gitgutter_sign_removed = '∙'
-let g:gitgutter_sign_modified_removed = '∙'
-
 " Mappings for fzf
 nmap <leader>f :Files<cr>
 nmap <leader>j :Buffers<cr>
 nmap <leader>h :History<cr>
 nmap <leader>t :Tags<cr>
 nmap <leader>c :History:<cr>
-
-" GitGutter
-nmap ghp <Plug>GitGutterPreviewHunk
-nmap ghs <Plug>GitGutterStageHunk
-nmap ghu <Plug>GitGutterUndoHunk
-
-if exists('&signcolumn')  " Vim 7.4.2201
-  set signcolumn=yes
-else
-  let g:gitgutter_sign_column_always = 1
-endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " General configs
