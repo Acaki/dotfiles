@@ -11,6 +11,7 @@ files=".vimrc .gitconfig .tmux.conf .config/fish/config.fish .config/alacritty/a
 echo "Fetching newest version of this repository..."
 git pull origin master
 
+
 read -p "Do you want to backup existing dotfiles? [y/n] " backup
 if [[ $backup =~ ^[Yy]$ ]] && [ ! -d $olddir ]; then
   printf "Creating backup directory..."
@@ -18,7 +19,7 @@ if [[ $backup =~ ^[Yy]$ ]] && [ ! -d $olddir ]; then
   printf "ok\n"
 fi
 
-mkdir -p $HOME/.config/fish $HOME/.config/alacritty
+mkdir -p $HOME/.config/{fish,alacritty}
 
 for file in $files; do
   if [ -f $HOME/$file ] && [ ! -L $HOME/$file ] && [[ $backup =~ ^[Yy]$ ]]; then
@@ -45,5 +46,38 @@ for file in $files; do
   echo "Symlink $file to home directory..."
   ln -sf $PWD/$file $HOME/$file
 done
+
+# Read command line arguments
+OPTS=$(getopt -o be -l build,example -- "$@")
+eval set -- "$OPTS"
+EXAMPLE=false BUILD=false
+while true; do
+  case "$1" in
+    -b|--build)
+      BUILD=true
+      shift
+      ;;
+    -e|--example)
+      EXAMPLE=true
+      shift
+      ;;
+    --)
+      shift
+      break
+      ;;
+  esac
+done
+
+# For itatic characters, additional terminfo is necessary
+if $EXAMPLE; then
+  echo "Symlink example files..."
+  ln -sf $PWD/example/* $PWD
+  tic -x $PWD/terminfo/xterm-256color-italic.terminfo
+  tic -x $PWD/terminfo/tmux-256color.terminfo
+fi
+
+if $BUILD; then
+  ./build_env.sh
+fi
 
 echo "Installation complete."
