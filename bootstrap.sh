@@ -6,11 +6,10 @@
 cd "$(dirname "${BASH_SOURCE}")";
 
 olddir=$HOME/dotfiles_old
-files=".vimrc .gitconfig .tmux.conf .config/fish/config.fish .config/alacritty/alacritty.yml .xprofile .makepkg.conf"
+files=".vimrc .gitconfig .tmux.conf .config/fish .config/alacritty .xprofile .makepkg.conf"
 
 echo "Fetching newest version of this repository..."
 git pull origin master
-
 
 read -p "Do you want to backup existing dotfiles? [y/n] " backup
 if [[ $backup =~ ^[Yy]$ ]] && [ ! -d $olddir ]; then
@@ -18,8 +17,6 @@ if [[ $backup =~ ^[Yy]$ ]] && [ ! -d $olddir ]; then
   mkdir $olddir
   printf "ok\n"
 fi
-
-mkdir -p $HOME/.config/{fish,alacritty}
 
 for file in $files; do
   if [ -f $HOME/$file ] && [ ! -L $HOME/$file ] && [[ $backup =~ ^[Yy]$ ]]; then
@@ -42,6 +39,9 @@ for file in $files; do
         break;
       fi
     done
+  fi
+  if [ -d $HOME/$file ]; then
+    rm -r $HOME/$file
   fi
   echo "Symlink $file to home directory..."
   ln -sf $PWD/$file $HOME/$file
