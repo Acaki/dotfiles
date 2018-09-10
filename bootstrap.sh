@@ -6,7 +6,8 @@
 cd "$(dirname "${BASH_SOURCE}")";
 
 olddir=$HOME/dotfiles_old
-files=".vimrc .gitconfig .tmux.conf .config/fish .config/alacritty .xprofile .makepkg.conf"
+files=".vimrc .gitconfig .tmux.conf .config/fish"
+mkdir -p $HOME/.config
 
 echo "Fetching newest version of this repository..."
 git pull origin master
@@ -46,6 +47,9 @@ for file in $files; do
   echo "Symlink $file to home directory..."
   ln -sf $PWD/$file $HOME/$file
 done
+
+# Delete broken symlinks
+find $HOME -xtype l -delete
 
 # Read command line arguments
 OPTS=$(getopt -o be -l build,example -- "$@")
