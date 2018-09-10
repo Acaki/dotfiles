@@ -8,6 +8,7 @@
   aa = add -u
   ap = add --patch
   r = reset
+  rh = reset --hard
   b = branch
   c = commit
   ca = commit -a

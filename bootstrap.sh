@@ -49,6 +49,7 @@ for file in $files; do
 done
 
 # Delete broken symlinks
+echo "Cleaning broken links..."
 find $HOME -xtype l -delete
 
 # Read command line arguments
