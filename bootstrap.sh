@@ -45,17 +45,13 @@ for file in $files; do
     rm -r $HOME/$file
   fi
   echo "Symlink $file to home directory..."
-  ln -sf $PWD/$file $HOME/$file
+  ln -snf $PWD/$file $HOME/$file
 done
 
-# Delete broken symlinks
-echo "Cleaning broken links..."
-find $HOME -xtype l -delete
-
 # Read command line arguments
-OPTS=$(getopt -o be -l build,example -- "$@")
+OPTS=$(getopt -o abe -l additional,build,example -- "$@")
 eval set -- "$OPTS"
-EXAMPLE=false BUILD=false
+EXAMPLE=false BUILD=false ADDITIONAL=false
 while true; do
   case "$1" in
     -b|--build)
@@ -64,6 +60,10 @@ while true; do
       ;;
     -e|--example)
       EXAMPLE=true
+      shift
+      ;;
+    -a|--additional)
+      ADDITIONAL=true
       shift
       ;;
     --)
@@ -81,8 +81,24 @@ if $EXAMPLE; then
   tic -x $PWD/terminfo/tmux-256color.terminfo
 fi
 
+if $ADDITIONAL; then
+  addi_files=".config/alacritty .inputrc .xprofile .makepkg.conf"
+  cd additional
+  for file in $addi_files; do
+    if [ -d $HOME/$file ]; then
+      rm -r $HOME/$file
+    fi
+    echo "Symlink $file to home directory..."
+    ln -snf $PWD/$file $HOME/$file
+  done
+fi
+
 if $BUILD; then
   ./build_env.sh
 fi
+
+# Delete broken symlinks
+echo "Cleaning broken links..."
+find $HOME -xtype l -delete
 
 echo "Installation complete."
