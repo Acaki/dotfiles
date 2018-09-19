@@ -3,3 +3,8 @@ nmap <leader>w :w<cr>
 nmap <leader>x :x<cr>
 nmap <leader>q :q<cr>
 nmap <leader>e :e<cr>
+
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
