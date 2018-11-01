@@ -1,24 +1,9 @@
-" For italic characters
-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_italic_comments = 1
 color nord
 let g:lightline['separator'] = { 'left': '', 'right': '' }
 let g:lightline['subseparator'] = { 'left': '', 'right': '' }
 " Search the word under the cursor using Rg
 nnoremap <silent> <leader>g :Rg <C-R><C-W><CR>
 
-let g:ale_fixers = {
-      \  'javascript': ['prettier_eslint'],
-      \  'php': ['php_cs_fixer']
-      \}
-let g:ale_sign_warning = '▲'
-let g:ale_sign_error = '✗'
-nmap <leader>a = :ALEFix<CR>
-nmap <C-n> <Plug>(ale_next_wrap)
-nmap <C-p> <Plug>(ale_previous_wrap)
 nmap <leader><leader>t :vert ter ++kill=kill<CR>
 tmap <C-W>q <C-W>:hide<CR>
 tmap <C-W>gt <C-W>:tabn<CR>
