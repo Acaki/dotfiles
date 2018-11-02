@@ -150,6 +150,7 @@ set nowb
 set noswapfile
 set hidden
 set autoread
+set belloff=all
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
