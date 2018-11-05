@@ -97,8 +97,4 @@ if $BUILD; then
   ./build_env.sh
 fi
 
-# Delete broken symlinks
-echo "Cleaning broken links..."
-find $HOME -xtype l -delete
-
 echo "Installation complete."
