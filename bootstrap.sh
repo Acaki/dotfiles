@@ -73,14 +73,6 @@ while true; do
   esac
 done
 
-# For itatic characters, additional terminfo is necessary
-if $EXAMPLE; then
-  echo "Symlink example files..."
-  ln -sf $PWD/example/* $PWD
-  tic -x $PWD/terminfo/xterm-256color-italic.terminfo
-  tic -x $PWD/terminfo/tmux-256color.terminfo
-fi
-
 if $ADDITIONAL; then
   addi_files=".config/alacritty .inputrc .xprofile .makepkg.conf"
   cd additional
