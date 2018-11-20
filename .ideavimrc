@@ -12,3 +12,4 @@ set smartcase
 set hlsearch
 set incsearch
 set surround
+set scrolloff=3
