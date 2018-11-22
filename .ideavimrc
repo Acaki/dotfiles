@@ -1,6 +1,6 @@
 let mapleader = " "
-nmap <leader>w :w<cr>
-nmap <leader>x :x<cr>
+nmap <leader>w :action SurroundWith<cr>
+nmap <leader>uw :action Unwrap<cr>
 nmap <leader>q :q<cr>
 nmap <leader>j :action RecentFiles<cr>
 nmap <leader>f :action GotoFile<cr>
