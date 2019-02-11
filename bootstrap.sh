@@ -6,7 +6,7 @@
 cd "$(dirname "${BASH_SOURCE}")";
 
 olddir=$HOME/dotfiles_old
-files=".vimrc .gitconfig .tmux.conf .config/fish"
+files=".vimrc .gitconfig .tmux.conf .config/fish .tmux/tmux.remote.conf"
 mkdir -p $HOME/.config $HOME/.tmux
 
 echo "Fetching newest version of this repository..."
