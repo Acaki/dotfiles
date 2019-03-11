@@ -18,4 +18,3 @@ set surround
 set scrolloff=3
 set nu
 set relativenumber
-set clipboard+=unnamed
