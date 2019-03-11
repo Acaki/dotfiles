@@ -6,7 +6,7 @@
 cd "$(dirname "${BASH_SOURCE}")";
 
 olddir=$HOME/dotfiles_old
-files=".vimrc .gitconfig .tmux.conf .config/fish .tmux/tmux.remote.conf"
+files=".vimrc .gitconfig .tmux.conf .config/fish .tmux/tmux.remote.conf .ideavimrc"
 mkdir -p $HOME/.config $HOME/.tmux
 
 echo "Fetching newest version of this repository..."
@@ -62,28 +62,12 @@ while true; do
       EXAMPLE=true
       shift
       ;;
-    -a|--additional)
-      ADDITIONAL=true
-      shift
-      ;;
     --)
       shift
       break
       ;;
   esac
 done
-
-if $ADDITIONAL; then
-  addi_files=".config/alacritty .inputrc .xprofile .makepkg.conf"
-  cd additional
-  for file in $addi_files; do
-    if [ -d $HOME/$file ]; then
-      rm -r $HOME/$file
-    fi
-    echo "Symlink $file to home directory..."
-    ln -snf $PWD/$file $HOME/$file
-  done
-fi
 
 if $BUILD; then
   ./build_env.sh
