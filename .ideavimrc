@@ -17,5 +17,3 @@ set hlsearch
 set incsearch
 set surround
 set scrolloff=3
-set nu
-set relativenumber
