@@ -4,6 +4,7 @@ nmap <leader>j :action RecentFiles<cr>
 nmap <leader>f :action GotoFile<cr>
 nmap <leader>t :action GotoSymbol<cr>
 nmap <leader>s :action FileStructurePopup<cr>
+nmap <leader>p :action FindInPath<cr>
 nmap <leader>r :action Run<cr>
 nmap <leader>d :action Debug<cr>
 nmap <leader>cr :action ChooseRunConfiguration<cr>
