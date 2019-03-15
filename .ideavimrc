@@ -1,6 +1,4 @@
 let mapleader = " "
-nmap <leader>w :action SurroundWith<cr>
-nmap <leader>uw :action Unwrap<cr>
 nmap <leader>q :q<cr>
 nmap <leader>j :action RecentFiles<cr>
 nmap <leader>f :action GotoFile<cr>
@@ -17,3 +15,5 @@ set hlsearch
 set incsearch
 set surround
 set scrolloff=3
+set number
+set relativenumber
