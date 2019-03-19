@@ -1,6 +1,7 @@
 let mapleader = " "
 nmap <leader><esc> :action HideActiveWindow<cr>
 nmap <leader>q :q<cr>
+nmap <leader>w :w<cr>
 nmap <leader>j :action RecentFiles<cr>
 nmap <leader>f :action GotoFile<cr>
 nmap <leader>t :action GotoSymbol<cr>
@@ -11,8 +12,6 @@ nmap <leader>r :action Run<cr>
 nmap <leader>d :action Debug<cr>
 nmap <leader>cr :action ChooseRunConfiguration<cr>
 nmap <leader>cd :action ChooseDebugConfiguration<cr>
-nmap J :action PreviousTab<cr>
-nmap K :action NextTab<cr>
 
 set ignorecase
 set smartcase
