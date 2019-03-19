@@ -1,4 +1,5 @@
 let mapleader = " "
+nmap <leader><esc> :action HideActiveWindow<cr>
 nmap <leader>q :q<cr>
 nmap <leader>j :action RecentFiles<cr>
 nmap <leader>f :action GotoFile<cr>
