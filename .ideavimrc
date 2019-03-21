@@ -12,7 +12,6 @@ nmap <leader>r :action Run<cr>
 nmap <leader>d :action Debug<cr>
 nmap <leader>cr :action ChooseRunConfiguration<cr>
 nmap <leader>cd :action ChooseDebugConfiguration<cr>
-inoremap <esc> <esc>:w<cr>
 
 set ignorecase
 set smartcase
