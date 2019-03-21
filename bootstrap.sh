@@ -4,9 +4,10 @@
 # and run "export MSYS=winsymlinks:nativestrict" before running this script
 
 cd "$(dirname "${BASH_SOURCE}")";
+
 olddir=$HOME/dotfiles_old
-files=".vimrc .gitconfig .tmux.conf .zshrc .tmux/tmux.remote.conf .ideavimrc"
-mkdir -p $HOME/.tmux
+files=".vimrc .gitconfig .tmux.conf .config/fish .tmux/tmux.remote.conf .ideavimrc"
+mkdir -p $HOME/.config $HOME/.tmux
 
 echo "Fetching newest version of this repository..."
 git pull origin master
