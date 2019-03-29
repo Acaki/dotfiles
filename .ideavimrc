@@ -20,4 +20,4 @@ set smartcase
 set hlsearch
 set incsearch
 set surround
-set scrolloff=5
+set scrolloff=3
