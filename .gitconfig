@@ -23,7 +23,8 @@
   go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 [core]
 	editor = vim
-	autocrlf = input
+  eol = lf
+	autocrlf = true
   whitespace = cr-at-eol
   untrackedCache = true
 [push]
