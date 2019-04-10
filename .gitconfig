@@ -24,7 +24,6 @@
 [core]
 	editor = vim
   eol = lf
-	autocrlf = true
   whitespace = cr-at-eol
   untrackedCache = true
 [push]
