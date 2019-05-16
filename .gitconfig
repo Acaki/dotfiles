@@ -37,5 +37,3 @@
   path = .gitconfig.user
 [help]
   autocorrect = 1
-[submodule]
-	recurse = true
