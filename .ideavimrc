@@ -5,6 +5,8 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader><cr> :noh<cr>
 nnoremap <leader>j :action RecentFiles<cr>
 nnoremap <leader>f :action GotoFile<cr>
+nnoremap <leader>n :action GotoClass<cr>
+vnoremap <leader>n :action GotoClass<cr>
 nnoremap <leader>t :action GotoSymbol<cr>
 vnoremap <leader>t :action GotoSymbol<cr>
 nnoremap <leader>s :action FileStructurePopup<cr>
