@@ -13,10 +13,7 @@ nnoremap <leader>s :action FileStructurePopup<cr>
 nnoremap <leader>p :action FindInPath<cr>
 vnoremap <leader>p :action FindInPath<cr>
 nnoremap <leader>e :action ShowErrorDescription<cr>
-nnoremap <leader>r :action Run<cr>
-nnoremap <leader>d :action Debug<cr>
-nnoremap <leader>cr :action ChooseRunConfiguration<cr>
-nnoremap <leader>cd :action ChooseDebugConfiguration<cr>
+nnoremap <leader>i :action QuickImplementations<cr>
 
 set ignorecase
 set smartcase
