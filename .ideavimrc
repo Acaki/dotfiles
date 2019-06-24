@@ -19,9 +19,6 @@ nnoremap g, :action JumpToNextChange<cr>
 
 set ignorecase
 set smartcase
-set hlsearch
 set incsearch
 set surround
 set scrolloff=3
-set rnu
-set nu
