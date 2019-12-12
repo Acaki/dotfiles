@@ -1,8 +1,6 @@
 let mapleader = " "
 nnoremap <leader><esc> :action HideActiveWindow<cr>
 nnoremap <leader>q :q<cr>
-nnoremap <leader>w :w<cr>
-nnoremap <leader><cr> :noh<cr>
 nnoremap <leader>j :action RecentFiles<cr>
 nnoremap <leader>f :action GotoFile<cr>
 nnoremap <leader>n :action GotoClass<cr>
@@ -14,8 +12,8 @@ nnoremap <leader>p :action FindInPath<cr>
 vnoremap <leader>p :action FindInPath<cr>
 nnoremap <leader>e :action ShowErrorDescription<cr>
 nnoremap <leader>i :action QuickImplementations<cr>
-nnoremap g; :action JumpToLastChange<cr>
-nnoremap g, :action JumpToNextChange<cr>
+nnoremap g, :action VcsShowPrevChangeMarker<cr>
+nnoremap g; :action VcsShowNextChangeMarker<cr>
 
 set ignorecase
 set smartcase
@@ -24,3 +22,8 @@ set surround
 set scrolloff=3
 set nu
 set rnu
+set easymotion
+set commentary
+set multiple-cursors
+set ideajoin
+set clipboard+=unnamed
