@@ -19,7 +19,7 @@ set ignorecase
 set smartcase
 set incsearch
 set surround
-set scrolloff=3
+set scrolloff=7
 set nu
 set rnu
 set easymotion
