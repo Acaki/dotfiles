@@ -26,4 +26,3 @@ set easymotion
 set commentary
 set multiple-cursors
 set ideajoin
-set clipboard+=unnamed
