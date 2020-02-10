@@ -12,6 +12,8 @@ nnoremap <leader>p :action FindInPath<cr>
 vnoremap <leader>p :action FindInPath<cr>
 nnoremap <leader>e :action ShowErrorDescription<cr>
 nnoremap <leader>i :action QuickImplementations<cr>
+nnoremap <leader>c :action GotoAction<cr>
+vnoremap <leader>c :action GotoAction<cr>
 nnoremap g, :action VcsShowPrevChangeMarker<cr>
 nnoremap g; :action VcsShowNextChangeMarker<cr>
 
