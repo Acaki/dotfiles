@@ -24,6 +24,7 @@ Plug 'tpope/vim-abolish'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'easymotion/vim-easymotion'
 
 try
   source ~/dotfiles/my_plugins.vim
@@ -118,13 +119,22 @@ nmap <leader>h :History<cr>
 nmap <leader>t :Tags<cr>
 nmap <leader>c :History:<cr>
 
+" Mappings for easymotion
+map <Leader> <Plug>(easymotion-prefix)
+map f <Plug>(easymotion-fl)
+map F <Plug>(easymotion-Fl)
+map t <Plug>(easymotion-tl)
+map T <Plug>(easymotion-Tl)
+map s <Plug>(easymotion-s2)
+map / <Plug>(easymotion-sn)
+
 """""""""""""""""""""""""""""""""""""""""""""""""
 " General configs
 "
 """""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=utf-8
 if has('gui_running')
-  set guifont=Iosevka:h12
+  set guifont=osevka:h12
   set lines=40 columns=120
   " Avoid garbled characters in Chinese language windows OS
   let $LANG='en'

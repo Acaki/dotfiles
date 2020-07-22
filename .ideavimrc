@@ -1,5 +1,10 @@
 let mapleader = " "
 map <leader> <Plug>(easymotion-prefix)
+map <leader>f <Plug>(easymotion-fl)
+map <leader>F <Plug>(easymotion-Fl)
+map <leader>t <Plug>(easymotion-tl)
+map <leader>T <Plug>(easymotion-Tl)
+map s <Plug>(easymotion-s2)
 
 set ignorecase
 set smartcase
