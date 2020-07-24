@@ -11,8 +11,6 @@ set smartcase
 set incsearch
 set surround
 set scrolloff=3
-set nu
-set rnu
 set easymotion
 set commentary
 set multiple-cursors
