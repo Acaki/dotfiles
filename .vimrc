@@ -121,12 +121,7 @@ nmap <leader>c :History:<cr>
 
 " Mappings for easymotion
 map <Leader> <Plug>(easymotion-prefix)
-map f <Plug>(easymotion-fl)
-map F <Plug>(easymotion-Fl)
-map t <Plug>(easymotion-tl)
-map T <Plug>(easymotion-Tl)
 map s <Plug>(easymotion-s2)
-map / <Plug>(easymotion-sn)
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " General configs
