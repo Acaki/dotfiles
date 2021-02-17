@@ -15,3 +15,5 @@ set easymotion
 set commentary
 set multiple-cursors
 set ideajoin
+set number
+set relativenumber
