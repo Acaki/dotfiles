@@ -1,0 +1,193 @@
+" General Settings
+set configversion 2.0
+set searchurls.amazon https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=
+set searchurls.amazonuk https://www.amazon.co.uk/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=
+set searchurls.bing https://www.bing.com/search?q=
+set searchurls.cnrtl http://www.cnrtl.fr/lexicographie/
+set searchurls.duckduckgo https://duckduckgo.com/?q=
+set searchurls.gentoo_wiki https://wiki.gentoo.org/index.php?title=Special%3ASearch&profile=default&fulltext=Search&search=
+set searchurls.github https://github.com/search?utf8=✓&q=
+set searchurls.google https://www.google.com/search?q=
+set searchurls.googlelucky https://www.google.com/search?btnI=I'm+Feeling+Lucky&q=
+set searchurls.googleuk https://www.google.co.uk/search?q=
+set searchurls.mdn https://developer.mozilla.org/en-US/search?q=
+set searchurls.osm https://www.openstreetmap.org/search?query=
+set searchurls.qwant https://www.qwant.com/?q=
+set searchurls.reddit https://www.reddit.com/search?q=
+set searchurls.scholar https://scholar.google.com/scholar?q=
+set searchurls.startpage https://startpage.com/do/search?language=english&cat=web&query=
+set searchurls.twitter https://twitter.com/search?q=
+set searchurls.wikipedia https://en.wikipedia.org/wiki/Special:Search/
+set searchurls.yahoo https://search.yahoo.com/search?p=
+set searchurls.youtube https://www.youtube.com/results?search_query=
+set smoothscroll true
+set update.checkintervalsecs 86400
+set update.lastchecktime 1609909437638
+set update.lastnaggedversion 1.14.0
+set update.nag true
+set update.nagwait 7
+
+" Binds
+bind $ scrollto 100 x
+unbind ,<Space>
+bind . repeat
+unbind /
+bind : fillcmdline_notrail
+bind ;# hint -#
+bind ;; hint -; *
+bind ;A hint -A
+bind ;I hint -I
+bind ;K hint -K
+bind ;M composite hint -Jpipe img src | tabopen images.google.com/searchbyimage?image_url=
+bind ;O hint -W fillcmdline_notrail open
+bind ;P hint -P
+bind ;S hint -S
+bind ;T hint -W fillcmdline_notrail tabopen
+bind ;W hint -W fillcmdline_notrail winopen
+bind ;Y hint -cF img i => tri.excmds.yankimage(tri.urlutils.getAbsoluteURL(i.src))
+bind ;a hint -a
+bind ;b hint -b
+bind ;g# hint -q#
+bind ;g; hint -q;
+bind ;gA hint -qA
+bind ;gF hint -qb
+bind ;gI hint -qI
+bind ;gP hint -qP
+bind ;gS hint -qS
+bind ;ga hint -qa
+bind ;gb hint -qb
+bind ;gf hint -q
+bind ;gi hint -qi
+bind ;gk hint -qk
+bind ;gp hint -qp
+bind ;gr hint -qr
+bind ;gs hint -qs
+bind ;gv hint -qW mpvsafe
+bind ;gw hint -qw
+bind ;gy hint -qy
+bind ;h hint -h
+bind ;i hint -i
+bind ;k hint -k
+bind ;m composite hint -Jpipe img src | open images.google.com/searchbyimage?image_url=
+bind ;o hint
+bind ;p hint -p
+bind ;r hint -r
+bind ;s hint -s
+bind ;t hint -W tabopen
+bind ;v hint -W mpvsafe
+bind ;w hint -w
+bind ;y hint -y
+bind ;z hint -z
+bind << tabmove -1
+bind <A-m> mute toggle
+bind <A-p> pin
+bind <AC-Escape> mode ignore
+bind <AC-`> mode ignore
+bind <AS-ArrowUp><AS-ArrowUp><AS-ArrowDown><AS-ArrowDown><AS-ArrowLeft><AS-ArrowRight><AS-ArrowLeft><AS-ArrowRight>ba open https://www.youtube.com/watch?v=M3iOROuTuMA
+bind <C-6> buffer #
+bind <C-[> composite mode normal ; hidecmdline
+bind <C-a> urlincrement 1
+bind <C-b> scrollpage -1
+bind <C-d> scrollpage 0.5
+bind <C-e> scrollline 10
+bind <C-f> scrollpage 1
+bind <C-i> jumpnext
+bind <C-o> jumpprev
+bind <C-u> scrollpage -0.5
+bind <C-v> nmode ignore 1 mode normal
+bind <C-x> urlincrement -1
+bind <C-y> scrollline -10
+bind <Escape> composite mode normal ; hidecmdline
+bind <F1> help
+bind <S-Escape> mode ignore
+bind <S-Insert> mode ignore
+bind >> tabmove +1
+unbind ?
+bind A bmark
+bind B fillcmdline taball
+bind D composite tabprev; tabclose #
+bind F hint -b
+bind G scrollto 100
+bind H back
+bind J tabprev
+bind K tabnext
+bind L forward
+bind M gobble 1 quickmark
+unbind N
+bind O current_url open
+bind P clipboard tabopen
+bind R reloadhard
+bind S fillcmdline tabopen search
+bind T current_url tabopen
+bind U undo window
+bind W current_url winopen
+bind X undo
+bind ZZ qall
+bind [[ followpage prev
+bind [c urlincrement -1
+bind ]] followpage next
+bind ]c urlincrement 1
+bind ^ scrollto 0 x
+bind a current_url bmark
+bind b fillcmdline tab
+bind d scrollpage 0.5
+bind f hint
+bind g! jumble
+bind g$ tablast
+bind g0 tabfirst
+bind g; changelistjump -1
+bind g? rot13
+bind gF hint -qb
+bind gH home true
+bind gT tabprev
+bind gU urlroot
+bind g^ tabfirst
+bind ga tabaudio
+bind gf viewsource
+bind gg scrollto 0
+bind gh home
+bind gi focusinput -l
+bind gr reader
+bind gt tabnext_gt
+bind gu urlparent
+bind gx$ tabclosealltoright
+bind gx0 tabclosealltoleft
+bind h scrollpx -50
+bind j scrollline 10
+bind k scrollline -10
+bind l scrollpx 50
+unbind n
+bind o fillcmdline open
+bind p clipboard open
+bind r reload
+bind s fillcmdline open search
+bind t fillcmdline tabopen
+bind u scrollpage -0.5
+bind v hint -h
+bind w fillcmdline winopen
+bind x tabclose
+bind yc clipboard yankcanon
+bind ym clipboard yankmd
+bind ys clipboard yankshort
+bind yt clipboard yanktitle
+bind yy clipboard yank
+bind zI zoom 3
+bind zM zoom 0.5 true
+bind zO zoom 0.3
+bind zR zoom -0.5 true
+bind zi zoom 0.1 true
+bind zm zoom 0.5 true
+bind zo zoom -0.1 true
+bind zr zoom -0.5 true
+bind zz zoom 1
+
+" Autocmds
+autocmd DocStart localhost:9999 mode ignore
+autocmd DocStart config.qmk.fm mode ignore
+autocmd DocStart github1s.com mode ignore
+
+" Removed settings
+setnull searchurls.searx
+
+" For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
+" vim: set filetype=tridactyl
