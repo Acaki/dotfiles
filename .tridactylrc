@@ -20,6 +20,7 @@ set searchurls.twitter https://twitter.com/search?q=
 set searchurls.wikipedia https://en.wikipedia.org/wiki/Special:Search/
 set searchurls.yahoo https://search.yahoo.com/search?p=
 set searchurls.youtube https://www.youtube.com/results?search_query=
+set searchurls.so https://stackoverflow.com/search?q=
 set smoothscroll true
 set update.checkintervalsecs 86400
 set update.lastchecktime 1609909437638
