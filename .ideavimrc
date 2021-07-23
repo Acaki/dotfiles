@@ -5,6 +5,8 @@ map <leader>F <Plug>(easymotion-Fl)
 map <leader>t <Plug>(easymotion-tl)
 map <leader>T <Plug>(easymotion-Tl)
 map s <Plug>(easymotion-s2)
+nnoremap <C-o> :action Back<CR>
+nnoremap <C-t> :action Back<CR>
 
 set ignorecase
 set smartcase
