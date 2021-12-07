@@ -123,6 +123,8 @@ nmap <leader>c :History:<cr>
 map <Leader> <Plug>(easymotion-prefix)
 map s <Plug>(easymotion-s2)
 
+let g:EasyMotion_keys = 'eisrhadulyfpcwmxgkjvqbztno'
+
 """""""""""""""""""""""""""""""""""""""""""""""""
 " General configs
 "
