@@ -1,4 +1,9 @@
 " General Settings
+set update.checkintervalsecs 86400
+set update.lastchecktime 1638860504476
+set update.lastnaggedversion 1.14.0
+set update.nag true
+set update.nagwait 7
 set configversion 2.0
 set searchurls.amazon https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=
 set searchurls.amazonuk https://www.amazon.co.uk/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=
@@ -22,11 +27,15 @@ set searchurls.yahoo https://search.yahoo.com/search?p=
 set searchurls.youtube https://www.youtube.com/results?search_query=
 set searchurls.so https://stackoverflow.com/search?q=
 set smoothscroll true
-set update.checkintervalsecs 86400
-set update.lastchecktime 1609909437638
-set update.lastnaggedversion 1.14.0
-set update.nag true
-set update.nagwait 7
+set theme midnight
+set modeindicatormodes.ignore false
+set modeindicatormodes.normal true
+set modeindicatormodes.insert true
+set modeindicatormodes.input true
+set modeindicatormodes.ex true
+set modeindicatormodes.hint true
+set modeindicatormodes.visual true
+set hintchars neitsrohadulyfpcwmxgkjvqbz
 
 " Binds
 bind $ scrollto 100 x
@@ -181,11 +190,18 @@ bind zm zoom 0.5 true
 bind zo zoom -0.1 true
 bind zr zoom -0.5 true
 bind zz zoom 1
+bind yo clipboard yankorg
+bind ;V hint -V
 
 " Autocmds
 autocmd DocStart localhost:9999 mode ignore
 autocmd DocStart config.qmk.fm mode ignore
 autocmd DocStart github1s.com mode ignore
+autocmd DocStart localhost:8887 mode ignore
+autocmd DocStart app.slack.com mode ignore
+autocmd DocStart zoom.us mode ignore
+autocmd DocLoad ^https://github.com/tridactyl/tridactyl/issues/new$ issue
+autocmd TriStart .* source_quiet
 
 " Removed settings
 setnull searchurls.searx
