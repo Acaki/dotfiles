@@ -25,6 +25,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'morhetz/gruvbox'
 
 try
   source ~/dotfiles/my_plugins.vim
@@ -111,6 +112,8 @@ augroup _lightline
   autocmd User ALEFixPost call s:MaybeUpdateLightline()
   autocmd ColorScheme * call s:UpdateLightlineColorScheme()
 augroup END
+
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " Mappings for fzf
 nmap <leader>f :Files<cr>
@@ -242,6 +245,7 @@ nmap <leader>p :setlocal paste!<cr>
 silent !mkdir -p ~/.vim/undodir
 set undodir=~/.vim/undodir
 set undofile
+
 
 try
   source ~/dotfiles/my_configs.vim
