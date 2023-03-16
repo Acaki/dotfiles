@@ -1,47 +1,17 @@
 test -d $HOME/.local/bin; and set PATH $HOME/.local/bin $PATH
-set LANG en_US.UTF-8
-set LC_ALL en_US.UTF-8
-set EDITOR vim
+set -x LANG en_US.UTF-8
+set -x LC_ALL en_US.UTF-8
+set -x EDITOR vim
+set -x GTK_IM_MODULE fcitx
+set -x QT_IM_MODULE fcitx
+set -x XMODIFIERS @im=fcitx
+# set -x DISPLAY (ip route | grep default | awk '{print $3; exit;}'):0.0
+set -x DISPLAY vsock/:0
+set -x XCURSOR_SIZE 16
+set -x XDG_SESSION_TYPE x11
 
 fish_vi_key_bindings
-
-setenv SSH_ENV $HOME/.ssh/environment
-
-function start_agent                                                                                                                                                                    
-    echo "Initializing new SSH agent ..."
-    ssh-agent -c | sed 's/^echo/#echo/' > $SSH_ENV
-    echo "succeeded"
-    chmod 600 $SSH_ENV 
-    . $SSH_ENV > /dev/null
-    ssh-add
-end
-
-function test_identities                                                                                                                                                                
-    ssh-add -l | grep "The agent has no identities" > /dev/null
-    if [ $status -eq 0 ]
-        ssh-add
-        if [ $status -eq 2 ]
-            start_agent
-        end
-    end
-end
-
-if [ -n "$SSH_AGENT_PID" ] 
-    ps -ef | grep $SSH_AGENT_PID | grep ssh-agent > /dev/null
-    if [ $status -eq 0 ]
-        test_identities
-    end  
-else
-    if [ -f $SSH_ENV ]
-        . $SSH_ENV > /dev/null
-    end  
-    ps -ef | grep $SSH_AGENT_PID | grep -v grep | grep ssh-agent > /dev/null
-    if [ $status -eq 0 ]
-        test_identities
-    else 
-        start_agent
-    end  
-end
+fish_ssh_agent
 
 function load-dot-env
     for line in (cat $argv[1])
@@ -72,3 +42,13 @@ function load-dot-env
         set -gx $name $sub2
     end
 end
+
+if not pgrep -f fcitx5 > /dev/null
+    command fcitx5 > /dev/null 2>&1 &
+end
+
+if not pgrep -f blackd > /dev/null
+    command blackd > /dev/null 2>&1 &
+end
+
+pyenv init - | source

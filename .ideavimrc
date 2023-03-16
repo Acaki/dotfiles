@@ -21,5 +21,4 @@ set ideajoin
 set number
 set relativenumber
 set idearefactormode=keep
-set keep-english-in-normal-and-restore-in-insert
-
+set keep-english-in-normal
